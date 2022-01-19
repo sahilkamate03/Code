@@ -1,0 +1,393 @@
+/*
+body{
+  background-image: url('file:///D:/code/html_file/Replica/images/exact.jpg');
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}*/
+
+body{
+ background-color: rgb(245,247, 251);
+ margin: 0 ;
+ padding: 0 ;
+}
+
+
+/*header*/
+
+.header{
+	width: 100%;
+	height: 8%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background-color: white;
+	display: block;
+}
+
+.header_text{
+	display: inline-block;
+	height: 100%;
+	width: 10%;
+	position: relative;
+	font-size: 1.5em;
+	font-family: arial;
+	position: absolute;
+	top: 23%;
+	text-align: center;
+	cursor: pointer;
+}
+
+.header_rec_text{
+	position: absolute;
+	right: 3%;
+	top: 34%;
+	font-family: arial;
+	display: inline-block;
+}
+
+.header_rec img{
+	display: inline-block;
+	position: absolute;
+	right: 15%;
+	top: 25%;
+}
+
+
+/*footer*/
+
+.footer{
+	position: absolute;
+	bottom: 0px ;
+	left: 0;	
+	width: 100%;
+	background-color: white;
+	height: 50px;
+	
+}
+
+.foot-btn-holder{
+	padding-left: 24px;
+	width: 25%;
+	position: relative;
+	float: left;
+	
+}
+
+.foot-btn{
+	margin: 5px;
+	padding: 8px;
+	width: 20%;
+	height: 45px;
+	border-radius: 8px;
+	border: none;
+	background-color: rgb(196, 196, 196);
+}
+
+.foot-btn img{
+	
+  vertical-align: middle;
+}
+
+.foot-btn:hover{	
+	background-color: #AAFFD6;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+.footer-text{
+	position: relative;	
+	padding: 8px 175px 8px 175px;
+	float: left;
+	vertical-align: middle;
+	left: 60px;
+	top: -12px;
+	text-align: center;
+}
+
+.leave{
+	position: relative;
+	display: inline-flex;
+	padding: 0px;
+    width: 130px;
+	height: 45px;
+    background-color: rgb(255, 44, 44);
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	overflow: hidden;
+	cursor: pointer ;
+	right: -250px;
+}
+
+.leave_button_text{
+	display: inline-flex;
+	align-items: center;
+	padding: 0 0px;
+	color: white;
+	height: 100%;
+	font-size: 17px;
+}
+
+.leave_button_img{
+	
+	display: inline-flex;
+	align-items: center;
+	padding: 0px 5px 0px 28px;
+	color: white;
+	height: 100%;	
+}
+
+.leave:hover{
+	background-color: darkred;
+	transition: 0.5;
+}
+
+
+/*column1 css*/
+
+.column1{
+	/*background-color: black;*/
+	height: 520px;
+	width :20%;
+	position: absolute;
+	left: 49px;
+	top: 90px;
+	padding: 10px auto;
+}
+
+.screen{
+	width :100%;
+	height: 30%;
+	position: absolute;
+	background-color: white;
+	border-radius: 2px;
+	overflow: hidden;
+	margin-bottom: 13px;
+
+}
+
+.screen:hover{
+	box-shadow: inset 0 0 2px black; 
+	cursor: pointer;
+	transition: 0.5;
+}
+
+.screen img{
+	display: block;
+	position: relative;
+	border-radius: 2px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 97%;
+	height: 100%%;
+	padding: 3.5px ;
+	margin: 2px auto;
+
+}
+
+.presenter{
+	width :100%;
+	height: 20%;
+	position: absolute;
+	top: 170px;
+	background-color: white;
+	border-radius: 3px;
+	overflow-y: scroll;
+}
+
+.presenter:hover{
+	box-shadow: inset 0 0 2px black;
+	cursor: pointer;
+	transition: 0.5;
+}
+
+.presenter_text{
+	text-align: justify;
+	padding: 14px;
+	margin: 5px;
+}
+
+.attende{
+	width :100%;
+	height: 50%;	
+	position: absolute;
+	top: 280px;
+	background-color: white;
+	border-radius: 2px;
+	overflow-y: scroll;
+	padding-left: 1px;
+}
+
+.attende:hover{
+	box-shadow: inset 0 0 2px black;
+	cursor: pointer;
+	transition: 0.5;
+}
+
+
+.attende_text{
+	margin: 5px;
+	padding: 14px;
+}
+
+/*scroll for preeseter*/
+
+.presenter::-webkit-scrollbar {
+        width: 5px;
+        padding: 5px;
+    }
+
+    /* Track */
+.presenter::-webkit-scrollbar-track {
+        box-shadow: inset rgb(214, 214, 214); 
+        border-radius: 10px;
+    }
+
+    /* Handle */
+.presenter::-webkit-scrollbar-thumb {
+        background: rgb(214, 214, 214); 
+        border-radius: 10px;
+        margin-right:50px ;
+    }
+
+    /* Handle on hover */
+.presenter::-webkit-scrollbar-thumb:hover {
+        background: #009eb3; 
+    }	
+
+ /*scroll for attende*/
+
+ .attende::-webkit-scrollbar {
+        width: 5px;
+        padding: 5px;
+    }
+
+    /* Track */
+.attende::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px grey; 
+        border-radius: 10px;
+    }
+
+    /* Handle */
+.attende::-webkit-scrollbar-thumb {
+        background: rgb(214, 214, 214);  
+        border-radius: 10px;
+        margin-right:50px ;
+    }
+
+    /* Handle on hover */
+.attende::-webkit-scrollbar-thumb:hover {
+        background: #009eb3; 
+    }	
+
+/*column2 css*/
+ 
+ .column2{
+ 	padding: 10px;
+ 	background-color: white;
+ 	border-radius: 2px;
+ 	box-shadow: 0px 0px 10px var(--clr-gray200);
+ 	position: absolute;
+ 	top: 90px;
+ 	left: 295px;
+ 	width: 43.5%;
+ 	height: 520px;
+ 	overflow: hidden;
+ 	margin-left: 40px;
+ }
+
+ .column2:hover{
+ 	box-shadow: inset 0 0 2px black;
+ 	transition: 0.5;
+ }
+
+ .column2 img{
+ 	display: block;
+ 	align-content: center;
+ 	position: relative;
+ 	height: 100%;
+ 	width: 80%;
+ 	margin-left: 18%;
+ 	margin-right: auto;
+ 	padding: 2px;
+ 	border-radius: 2px;
+ }
+.column2_text{
+	position:relative ;
+	font-size: 15px;
+	font-family: sans-serif;
+	bottom: 40px;
+}
+/*column3*/
+
+.column3{
+	position: absolute;
+	right: 40px;
+	top: 90px;
+	height: 535px;
+	overflow-y: scroll;
+}
+
+.card, .card1, .card2, .card3, .card4{
+	heigth:90px;
+	width:325px;
+	margin-bottom: 8px;
+	background-color:white;
+	border-radius:5px;
+	padding:10px;
+	cursor: pointer;
+	
+}
+
+.card, .card1, .card2, .card3, .card4: hover{
+	box-shadow: 0px 0px 10px var(--clr-black200);	
+}
+.bg{
+	border-radius:5px;
+	padding:0px;
+	background-color:#AAFFD6;
+}
+
+.mic img{
+	left: 10px;
+	position:relative;
+	top:145px;
+
+}
+
+.bg-b{
+	border-radius:5px;
+	padding:0px;
+	background-color:rgb(198, 198, 198);
+}
+
+/*column3 scrollbar*/
+
+.column3::-webkit-scrollbar {
+        width: 5px;
+        padding: 5px;
+    }
+
+    /* Track */
+.column3::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px grey; 
+        border-radius: 10px;
+    }
+
+    /* Handle */
+.column3::-webkit-scrollbar-thumb {
+        background: rgb(214, 214, 214);  
+        border-radius: 10px;
+        margin-right:50px ;
+    }
+
+    /* Handle on hover */
+.column3::-webkit-scrollbar-thumb:hover {
+        background: #009eb3; 
+    }

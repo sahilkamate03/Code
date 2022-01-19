@@ -1,0 +1,20 @@
+<svg >
+  <circle cx="125px" cy="65px" r="40px" stroke="white" stroke-width="4" fill="#AAFFD6"  />
+  <svg >
+	   <defs>
+        <filter id="f"  >
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+        </filter>
+    </defs>
+  <circle cx="125px" cy="65px" r="35px" stroke="white" stroke-width="4" fill="white" filter="url(#f)" />
+	    <text x="125px" y="65px" 
+          text-anchor="middle"
+          stroke="black"
+          font-family="sans-serif"
+					font-size="30px"
+					
+          alignment-baseline="middle"
+          > AC
+    </text>
+</svg>
+</svg>
