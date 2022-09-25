@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="index.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="subs/footer.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="header.css"> <!--this shouls be present at last-->
+
+    <title>Homepage</title>
+
+    <style >
+      :focus {
+  outline: 0 !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+} /*removing the unwanted blue outline on focus*/
+
+body {
+  background: rgb(255, 255, 255);
+}
+
+.bg-dark {
+  background-color: black !important;
+}
+.navbar > div {
+  padding: 0 15vw 0 15vw;
+}
+#navbarAltMarkup {
+  width: 60%;
+}
+.navbar-nav {
+  gap: 2vw;
+}
+.nav-link:last-child {
+  min-width: 100px;
+}
+.nav-link {
+  text-align: center;
+}
+.logo-small {
+  display: none;
+}
+.navbar-dark .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.heading {
+  display: flex;
+
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+.heading h1 {
+  font-size: max(2vw, 25px);
+}
+
+@media all and (max-width: 768px) {
+  .navbar-nav {
+    gap: 0;
+  }
+}
+
+
+
+/*main-section*/
+.main-section{
+  display: flex;
+  flex-direction: row;
+}
+
+.text{
+  margin-top:5vw;
+}
+.text h1{
+  color:rgb(7, 114, 253);
+  font-size: max(6vw , 30px);
+}
+.text p{
+  color:rgb(2, 2, 2);
+  font-size: max(2vw , 18px);
+  font-weight: bold;
+}
+
+.img-pt{
+  width:30vw;
+}
+
+.btn {
+  border-color:  #3498db;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 0 40px 40px  #3498db inset, 0 0 0 0 #3498db;
+  transition: all 150ms ease-in-out;
+}
+.btn:hover {
+    box-shadow: 0 0 10px 0  #3498db inset, 0 0 10px 4px #3498db;
+  }
+
+
+
+@media all and (max-width: 768px) {
+  .navbar-nav {
+    gap: 0;
+  }
+  .px-5{
+    padding-left:0 !important;
+  }
+  .heading h1 {
+    position: absolute;
+    left: 35%;
+    font-size: 25px;
+    top:20px;
+  }
+  .img-pt{
+    margin-top: 100px;
+  }
+}
+
+/*navbar*/
+:focus {
+    outline: 0 !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+  } 
+.bg-dark {
+    background-color: black !important;
+  }
+  .navbar > div {
+    padding: 0 15vw 0 15vw;
+  }
+  #navbarAltMarkup {
+    width: 60%;
+  }
+  .navbar-nav {
+    gap: 2vw;
+  }
+  .nav-link:last-child {
+    min-width: 100px;
+  }
+  .nav-link {
+    text-align: center;
+  }
+  .logo-small {
+    display: none;
+  }
+  .navbar-dark .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  
+  .heading {
+    display: flex;
+  
+    align-items: center;
+    color: white;
+    font-weight: bold;
+  }
+  .heading h1 {
+    font-size: max(2vw, 25px);
+  }
+
+  @media all and (max-width: 768px) {
+    .navbar-nav {
+      gap: 0;
+    }
+}
+
+body{
+    background: #fcfcfc;
+}
+footer{
+    background: #111;
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans";
+    padding-top: 20px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    font-family: "Raleway", sans-serif;
+    letter-spacing: .5px;
+    max-width: 500px;
+    margin: 0px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 1.5rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    font-family: "Raleway", sans-serif;
+    opacity: .4;
+    font-weight: 200;
+}
+    
+
+.loader_wrap{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #242f3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #Fff;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(180deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  75% {
+    transform: rotate(360deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  
+  25% {
+    height: 0%;
+  }
+  
+  50% {
+    height: 100%;
+  }
+  
+  75% {
+    height: 100%;
+  }
+  
+  100% {
+    height: 0%;
+  }
+}
+
+    </style>
+
+
+  </head>
+
+
+  <body>
+    
+
+    <!--HEADER START (ENDS AT LINE 59) -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark p-3">
+      <div class="container-fluid flex-row px-5">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="container heading">
+          <h1 class="m-0">notSoBoring.com</h1>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">Games</a>
+            <a class="nav-link" href="#">Entertainment</a>
+            <a class="nav-link" href="#">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  <!--HEADER END -->
+
+
+
+ <!--PLEASE DONT TOUCH THIS CODE  -->
+    <div class="container main-section">
+      <div class="text">
+        <h1>Hi, are you bored?</h1>
+        <p>Play some mini games ,laugh on random jokes or chat with a bot. Click this to visit a random page</p>
+        <a href="#"><button class="btn btn-light btn-lg p-2">Click Here</button></a>
+      </div>
+      <div>
+        <img src="images/einstein.jpg" alt="" class="img-pt">
+      </div>
+    </div>
+
+
+    <br><br><br><br>
+    <!--Footer-->
+      <footer>
+        <div class="footer-content">
+          <h3>Overflow Hidden</h3>
+          <p>This website is created for Graphica.</p>
+          <ul class="socials">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p style = 'margin: 0;'>copyright &copy;2021 designed by <span>OverflowHidden</span></p>
+        </div>
+      </footer>
+   <div class="loader_wrap"><span class="loader"><span class="loader-inner"></span></span></div>
+ 
+ <script >
+  loading = document.querySelector('.loader_wrap')
+
+  function load()
+{ 
+  loading.style.display='none';
+}
+
+ window.onload=setTimeout(load, 2000)
+  
+ </script>
+
+  </body>
+  </html>

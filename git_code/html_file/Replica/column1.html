@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+
+/*body{
+  background-image: url('file:///D:/code/html_file/Replica/images/exact.jpg');
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}*/
+
+
+.column1{
+	/*background-color: black;*/
+	height: 505px;
+	width :22%;
+	opacity: 50%;
+	position: absolute;
+	left: 49px;
+	top: 59px;
+}
+
+.screen{
+	width :100%;
+	height: 30%;
+	opacity: 75%;
+	position: absolute;
+	background-color: white;
+	border-radius: 2px;
+	margin-bottom: 15px;
+
+}
+.screen img{
+	border-radius: 2px;
+	position: absolute;
+	width: 93%;
+	height: 96%;
+	overflow: hidden;
+	padding: 9px;
+
+}
+
+.presenter{
+	width :100%;
+	height: 20%;
+	opacity: 30%;
+	position: absolute;
+	top: 180px;
+	background-color: red;
+	border-radius: 2px;
+	overflow-y: scroll;
+}
+
+.attende{
+	width :100%;
+	height: 49%;
+	/*opacity: 10%;*/	
+	position: absolute;
+	top: 290px;
+	background-color: red;
+	border-radius: 2px;
+	overflow-y: scroll;
+	padding-left: 1px;
+}
+
+.attende_text{
+	margin: 5px;
+	padding: 14px;
+}
+
+/*scroll for preeseter*/
+
+.presenter::-webkit-scrollbar {
+        width: 5px;
+        padding: 5px;
+    }
+
+    /* Track */
+.presenter::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px grey; 
+        border-radius: 10px;
+    }
+
+    /* Handle */
+.presenter::-webkit-scrollbar-thumb {
+        background: rgb(7, 7, 7); 
+        border-radius: 10px;
+        margin-right:50px ;
+    }
+
+    /* Handle on hover */
+.presenter::-webkit-scrollbar-thumb:hover {
+        background: #009eb3; 
+    }	
+
+ /*scroll for attende*/
+
+ .attende::-webkit-scrollbar {
+        width: 5px;
+        padding: 5px;
+    }
+
+    /* Track */
+.attende::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px grey; 
+        border-radius: 10px;
+    }
+
+    /* Handle */
+.attende::-webkit-scrollbar-thumb {
+        background: rgb(7, 7, 7); 
+        border-radius: 10px;
+        margin-right:50px ;
+    }
+
+    /* Handle on hover */
+.attende::-webkit-scrollbar-thumb:hover {
+        background: #009eb3; 
+    }	
+
+
+
+	</style>
+</head>
+<body>
+	<div class="column1">
+		<div class="screen">
+			<img src=".\images\camera-mage.png">
+		</div>
+
+		<div class="presenter">
+<pre>
+	Sahil Kamate  <br>
+	Harshal Patil<br>
+	Pratik More<br>
+	Suraj Chavan<br>
+	Prathamesh Mali<br>
+	Ganesh Munde<br>
+	Sunit<br>
+</pre>
+			
+		</div>
+
+		<div class="attende">
+			<div class="attende_text">
+			<b>Attendes</b><br>
+			Sahil Kamate<br><br><br>
+			Harshal Patil<br><br><br>
+			Suraj Chavan<br><br><br>
+			Pratik More<br><br><br>
+			Prathamesh Mali<br><br><br>
+			</div>
+		</div>
+
+	</div>
+
+
+</body>
+</html>

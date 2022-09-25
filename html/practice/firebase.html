@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div class="container"> -->
+    Name: <input type="text" id="Namebox"><br>
+    Roll: <input type="text" id="Rollbox"><br>
+    Section: <input type="text" id="Secbox"><br>
+    Gen: <input type="text" id="gender"><br>
+    <button id="Insbtn">Insert</button>
+    <button id="Selbtn">Select</button>
+    <button id="Updbtn">Update</button>
+    <button id="Delbtn">Delete</button>
+    <!-- </div>  -->
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDuNMJkP1n-zz6HwPsXBbdObqShczS5lpQ",
+            authDomain: "testing-d7929.firebaseapp.com",
+            databaseURL: "https://testing-d7929-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "testing-d7929",
+            storageBucket: "testing-d7929.appspot.com",
+            messagingSenderId: "73249408715",
+            appId: "1:73249408715:web:13305f0d524b4853e83d4e",
+            measurementId: "G-WWS601V66J"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        import {getDatabase, ref ,set, child , update, remove}
+        from "https://www.gstatic.com/firebasejs/9.7.0/firebase-database.js"
+
+        const db= getDatabase();
+
+        var nammebox=document.getElementById("Namebox")
+        var rollfbox=document.getElementById("Rollbox")
+        var secbox=document.getElementById("Secbox")
+        var genbox=document.getElementById("Genbox")
+
+        var insBtn=document.getElementById("Insbtn")
+        var insBtn=document.getElementById("Selbtn")
+        var insBtn=document.getElementById("Updbtn")
+        var insBtn=document.getElementById("Delbtn")
+
+        function InsertData(){
+            set (ref(db,"TheStudents/"+rollbox.value),{
+                NameofStd: namebox.value,
+                RollNo: rollbox.value,
+                Section: secbox.value,
+                Gender: genbox.value
+            })
+            .then(() =>{
+                alert("data stored successfully");
+            })
+            .catch ((error) =>{
+                alert("unsuccesful, error occured")
+            })
+        }
+
+        inBtn.0
+    </script>
+</body>
+
+
+</html>

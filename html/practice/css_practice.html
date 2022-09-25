@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Practice</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+
+		.city {
+			background-color: tomato;
+			color: white;
+			margin: 10px;
+			padding: 30px;
+		}
+
+		#myHeader {
+			background-color: lightblue;
+			color: black;
+			padding: 40px;
+			text-align: center;
+		}
+
+		/* p { */
+		/* border: 4px green solid; */
+		/* background-image: url('https://thumbs.dreamstime.com/b/youtube-logo-17745406.jpg'); */
+		/* background-repeat: no-repeat; */
+		/* height: 800px;
+			width: 1500px;
+			background-position: top center; */
+		/*x and y axis*/
+		/* } */
+
+		.mar{
+			float: left;
+			padding: 10px;
+			margin:10px;
+		}
+
+		.marpad {
+			float:left;
+			border: 7px rgb(116 195 190) solid;
+			padding: 30px;
+			margin: 33px auto;
+			background-color: rgb(204 255 208);
+			border-radius: 20px;
+			width: 500px;
+			font-family: 'Ubuntu', sans-serif;
+			/* float: right  ; */
+		}
+	</style>
+
+
+
+</head>
+
+<body>
+
+	<div class="container20">
+
+	</div>
+
+	<div class="mar">
+	<div class="marpad">
+		<p>Para 1</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorem eaque, excepturi explicabo
+			distinctio non soluta itaque quod alias et suscipit maxime nemo ducimus adipisci delectus libero
+			reiciendis
+			dignissimos quaerat!</p>
+	</div>
+	<div class="marpad">
+		<p>Para 2</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorem eaque, excepturi explicabo
+			distinctio non soluta itaque quod alias et suscipit maxime nemo ducimus adipisci delectus libero
+			reiciendis
+			dignissimos quaerat!</p>
+	</div>
+
+	<div class="marpad">
+		<p>Para 3</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorem eaque, excepturi explicabo
+			distinctio non soluta itaque quod alias et suscipit maxime nemo ducimus adipisci delectus libero
+			reiciendis
+			dignissimos quaerat!</p>
+	</div>
+</div>
+
+
+	<h1 style="font-size: 60px;">Sahil</h1>
+	<pre>
+	Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+	 ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not
+	  only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s 
+	  with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus 
+	  PageMaker including versions of Lorem Ipsum.
+</pre>
+
+	<!-- paragraph testing -->
+	<p style="background-color: tomato; font-size: 30px;">Kamate
+		<b>Bottle</b> <br>
+		<strong>Bottle</strong><br>
+		<mark>Sangam</mark><br>
+		<del>Strike</del><br>
+		Sahil
+		<sub>Subbter</sub>
+	<blockquote cite="http://www.worldwildlife.org/who/index.html">
+		For 50 years, WWF has been protecting the future of nature.
+		The world's leading conservation organization,
+		WWF works in 100 countries and is supported by
+		1.2 million members in the United States and
+		close to 5 million globally.
+	</blockquote>
+	</p>
+
+	<p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>
+	<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+
+	<address>
+		Written by John Doe.<br>
+		Visit us at:<br>
+		Example.com<br>
+		Box 564, Disneyland<br>
+		USA
+	</address>
+
+	<p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+	<bdo dir="rtl">This text will be written from right to left</bdo>
+
+	<div style="background-color:black;color:white;padding:20px;">
+		<h2>London</h2>
+		<p>London is the capital city of England. It is the most populous city in the United Kingdom, with a
+			metropolitan area of over 13 million inhabitants.</p>
+	</div>
+
+	<p>My mother has <span style="color:blue;font-weight:bold">blue</span> eyes and my father has <span
+			style="color:darkolivegreen;font-weight:bold">dark green</span> eyes.</p>
+
+	<div class="city">Pune</div>
+	<div class="city">Mumbai</div>
+	<div class="city">Nagpur</div>
+	<div class="city">Delhi</div>
+
+	<h1 id="myHeader">My Header</h1>
+	<iframe src="https://www.google.com/" title="description"></iframe>
+	<iframe src="demo_iframe.htm" style="height:200px;width:300px;" title="Iframe Example"></iframe>
+	<iframe src="demo_iframe.htm" style="border:none;" title="Iframe Example"></iframe>
+	<iframe src="" style="border:2px solid red;" title="Iframe Example"></iframe>
+
+	<script>
+		document.getElementById("demo").innerHTML = "Hello JavaScript!";
+	</script>
+	<!-- document.getElementById("demo").innerHTML = "Hello JavaScript!"; -->
+
+	<p id="demo"></p>
+
+	<script>
+		document.getElementById("demo").innerHTML = "Sahil Kamate";
+	</script>
+
+	<ul>
+		<li>Sahil</li>
+		<li>Harshal</li>
+	</ul>
+
+	<div>
+		car:
+		<!-- <label for="car">Car:</label> -->
+		<select id="car">
+
+			<option value="ind">Indica</option>
+			<option value="swf">Swift</option>
+
+		</select>
+	</div>
+	<br>
+	<div>
+		<label for="mytext">Enter text:</label>
+		<input type="text" name="mytext" id="mytext">
+	</div>
+
+	<h4>Sahil</h4>
+	<p>This is a para for testing. Hello 1 2 3 1 2 3</p>
+</body>
+
+</html>
