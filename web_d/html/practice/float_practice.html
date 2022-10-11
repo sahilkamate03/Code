@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Practice</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            border: 5px solid black;
+            width: 900px;
+            margin-top: 30px;
+            /* display: flex; */
+            width: auto;
+            height: auto;
+            /* box-sizing: border-box; */
+            font-family: 'Ubuntu';
+            float: right;
+        }
+
+        .item {
+            float: right;
+            border: 5px solid rgb(255, 85, 85);
+            padding: 10px;
+            margin: 10px;
+            background: rgb(255, 250, 210);
+            width: 40%; 
+            box-sizing: content-box;
+
+            /* clear: both; */
+            /* clear:both;     */
+        }
+/* 
+        #fruits {
+            width: 50%;
+            float: left;
+        }
+
+        #computer {
+            width: 50%;
+            float: left;
+        }
+*/
+        #mess {
+            width: 100% ;
+            /* float: left; */
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="fruits" class="item">
+            <h3>Fruits</h3>
+            <P id="fruitspara" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequuntur
+                magnam iure explicabo adipisci fugiat unde velit totam consectetur suscipit?</P>
+        </div>
+
+        <div id="computer" class="item">
+            <h3>Computer</h3>
+            <P id="computerpara" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequuntur
+                magnam iure explicabo adipisci fugiat unde velit totam consectetur suscipit?</P>
+        </div>
+
+        <div id="mess" class="item">
+            <h3>Mess</h3>
+            <P id="messpara" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequuntur
+                magnam iure explicabo adipisci fugiat unde velit totam consectetur suscipit?</P>
+        </div>
+    </div>
+</body>
+
+</html>

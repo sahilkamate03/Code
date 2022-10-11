@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.nave {
+    /* display: block; */
+    position: relative;
+    width: 100%;
+    height: 70px;
+    /* background-color: red; */
+    /* border: 2px solid black; */
+    /* box-shadow-bottom: 5px #000; */
+    -moz-box-shadow: 3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow: 3px 1px 5px 1px #ccc;
+}
+
+.nave img {
+    width: 150px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 4.5%;
+    /* vertical-align: middle; */
+}
+
+.nave button {
+    /* min-width: 150px ; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 55%;
+    width: 20vh;
+    right: 5%;
+    outline: none;
+    background-color: white;
+    border: 1px solid #4B7ABD;
+    color: #4B7ABD;
+}
+
+.nave button:hover {
+    background-color: #4B7ABD;
+    color: white;
+}
+
+.navig{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.navig div{
+    margin: 20px 10px;
+    padding:3px;
+    /* background-color: red; */
+}
+
+.navig div:hover{
+    transition: 0.5s;
+    background-color: #eff7ff;
+    color:white;
+}
+.navig a{
+    color: black;
+    font-family: Open Sans,serif;
+    /* font-weight: 100; */
+    padding:25px 9px;
+    text-decoration: none;
+    /* font-size: ; */
+    /* display: flex; */
+    /* float: left; */
+}
