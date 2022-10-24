@@ -1,9 +1,11 @@
     /*
      * GL01Hello.cpp: Test OpenGL C/C++ Setup
      */
-    #include <windows.h>  // For MS Windows
+    #include <iostream>
     #include <GL/glut.h>  // GLUT, includes glu.h and gl.h
+    #include <windows.h>  // For MS Windows
      
+     using namespace std;
     /* Handler for window-repaint event. Call back when the window first appears and
        whenever the window needs to be re-painted. */
     void display() {
