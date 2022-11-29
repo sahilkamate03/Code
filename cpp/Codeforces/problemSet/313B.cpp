@@ -3,8 +3,11 @@ using namespace std;
 
 int answer(string s,int l, int r)
 {
-	cout << s << endl;
-	return l+r;
+	int ans =0;
+	for (int i=l;i<r; i++)	
+		if (s[i-1]==s[i]) ans++;
+	
+	return ans;
 }
 
 int main(){
