@@ -1,0 +1,1 @@
+g++ file_name -lopengl32 -lglu32 -lfreeglut

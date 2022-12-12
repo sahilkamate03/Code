@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex {
+            background-color: aquamarine;
+            border: 2px solid black;
+            display: flex;
+            height: 500px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .f1,
+        .f2,
+        .f3,
+        .f4 {
+            /* flex-wrap: wrap; */
+            background-color: red;
+            margin: 10px;
+            width: 200px;
+            height: 90%;
+
+        }
+
+        @media (max-width: 800px) {
+            .flex-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="flex">
+        <div class="f1">f1</div>
+        <div class="f2">f2</div>
+        <div class="f3">f3</div>
+        <div class="f4">f4</div>
+    </div>
+
+</body>
+
+</html>
