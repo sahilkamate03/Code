@@ -1,21 +1,8 @@
 #include <bits/stdc++.h>
+#include "stack.h"
 using namespace std;
 
 #define MAX 1000
-
-class Stack
-{
-private:
-	int top;
-	
-public:
-	int stack[MAX];
-	Stack() {top =-1;}
-	bool push(int);
-	int pop();
-	int peek();
-	bool isEmpty();
-};
 
 bool Stack::push(int element)
 {
@@ -26,11 +13,11 @@ bool Stack::push(int element)
 	}
 
 	stack[++top] =element;
-	cout << element << " pushed to the stack."<< endl;
+	// cout << element << " pushed to the stack."<< endl;
 	return true;
 }
 
-int Stack::pop()
+char Stack::pop()
 {
 	if (top<0)
 	{
@@ -42,7 +29,7 @@ int Stack::pop()
 	return stack[top];
 }
 
-int Stack::peek()
+char Stack::peek()
 {
 	if (top<0)
 	{
@@ -58,12 +45,3 @@ bool Stack::isEmpty()
 	return (top<0);
 }
 
-int main(){
-	Stack s1;
-	s1.push(5);
-	s1.push(59);
-	cout << "Element: " << s1.peek() << endl;
-	cout << "is empty (0=false, 1=true): " << s1.isEmpty() << endl;
-	cout << "Popped Element: " << s1.pop() << endl;
-	cout << "Element: " << s1.peek() << endl;
-}

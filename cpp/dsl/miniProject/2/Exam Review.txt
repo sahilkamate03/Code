@@ -1,0 +1,8 @@
+
+What is your First name?
+sahil
+What is your Last name?
+kamate
+What file stores your questions?
+
+How many questions would you like (Limit is 15)?

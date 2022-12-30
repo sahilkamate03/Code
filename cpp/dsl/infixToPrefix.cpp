@@ -1,160 +1,113 @@
 #include <bits/stdc++.h>
+#include "stack.h"
 using namespace std;
- 
-bool isOperator(char c){ return (!isalpha(c) && !isdigit(c));}
 
-int priority(char C)
+bool isOperator(char c) 
 {
-    if (C == '-' || C == '+')
-        return 1;
-    else if (C == '*' || C == '/')
-        return 2;
-    return 0;
-}
-
-bool isOperand(char x)
-{
-   return (x >= 'a' && x <= 'z') ||    (x >= 'A' && x <= 'Z');
-}
-
- 
-string In_to_Pre(string infix)
-{
-    stack<char> operators;
-    stack<string> operands;
- 
-    for (int i = 0; i < infix.length(); i++) {
-        if (infix[i] == '(') {
-            operators.push(infix[i]);
-        }
-        else if (infix[i] == ')') {
-            while (!operators.empty() &&
-                   operators.top() != '(') {
-                string op1 = operands.top();
-                operands.pop();
-
-                string op2 = operands.top();
-                operands.pop();
- 
-                char op = operators.top();
-                operators.pop();
- 
-                string tmp = op + op2 + op1;
-                operands.push(tmp);
-            }
- 
-            operators.pop();
-        }
- 
-        else if (!isOperator(infix[i])) { operands.push(string(1, infix[i]));
-        }
- 
-        else {
-            while (!operators.empty() &&
-                   priority(infix[i]) <=
-                     priority(operators.top())) {
- 
-                string op1 = operands.top();
-                operands.pop();
- 
-                string op2 = operands.top();
-                operands.pop();
- 
-                char op = operators.top();
-                operators.pop();
- 
-                string tmp = op + op2 + op1;
-                operands.push(tmp);
-            }
- 
-            operators.push(infix[i]);
-        }
-    }
- 
-    while (!operators.empty()) {
-        string op1 = operands.top();
-        operands.pop();
- 
-        string op2 = operands.top();
-        operands.pop();
- 
-        char op = operators.top();
-        operators.pop();
- 
-        string tmp = op + op2 + op1;
-        operands.push(tmp);
-    }
-    return operands.top();
-}
- 
-
-string Pst_to_Pre(string post_exp)
-{
-	stack<string> s;
-	int length = post_exp.size();
-
-	for (int i = 0; i < length; i++) {
-		if (isOperator(post_exp[i])) {
-			string op1 = s.top();
-			s.pop();
-			string op2 = s.top();
-			s.pop();
-
-			string temp = post_exp[i] + op2 + op1;
-			s.push(temp);
-		}
-		else {
-			s.push(string(1, post_exp[i]));
-		}
-	}
-	string ans = "";
-	while (!s.empty()) {
-		ans += s.top();
-		s.pop();
-	}
-	return ans;
-}
-
-
-string Pst_to_In(string exp)
-{
-    stack<string> s;
- 
-    for (int i=0; exp[i]!='\0'; i++)
+    switch (c)
     {
-        // Push operands
-        if (isOperand(exp[i]))
-        {
-           string op(1, exp[i]);
-           s.push(op);
-        }
-        else
-        {
-            string op1 = s.top();
-            s.pop();
-            string op2 = s.top();
-            s.pop();
-            s.push("(" + op2 + exp[i] +
-                   op1 + ")");
-        }
+    case '+':
+        return true;
+    case '-':
+        return true;
+    case '*':
+        return true;
+    case '/':
+        return true;
+    case '^':
+        return true;
+    case '(':
+        return true;
+    case ')':
+        return true;
+    default:
+        return false;
     }
-    return s.top();
 }
 
-int main()
+int getPriority(char c)
 {
-    string s ;
-    cout<<"enter the infix expression : ";
-    cin>>s;
-    cout << "prefix expression is : "<<In_to_Pre(s) <<endl;
-    cout<<endl;
+    if (c == '+' || c == 'i')
+        return 1;
+    else if (c == '*' || c == '/')
+        return 2;
+    else if (c == '^')
+        return 3;
+
+    return 4;
+}
+
+// void reverseString(char str[])
+// {
+//     int n =strlen(str);
+//     Stack reverse;
+
+//     for (int i=0; i<=n; i++)
+//         reverse.push(str[i]);
+
+//     int i=0;
+//     while (!reverse.isEmpty())
+//         str[i]=reverse.pop(), i++;
+
+// }
+
+string infixToPrefix(string str)
+{
+    string ans ="";
+    Stack st;
+    int prevPriority =0, currentPriority =0;
+
+    for (int i=str.size()-1; i>-1; i--)
+    {
+        char ch =str[i];
+        // cout << ans << " " << ch << " " << st.peek() << endl;
+
+        if (!isOperator(ch))
+        {
+            ans +=ch;
+            continue;
+        }
+
+        currentPriority =getPriority(ch);
+
+        if (ch == '(')
+        {
+            int n =i;
+            char tempC =st.pop();
+            cout << tempC << endl; 
+            ans +=tempC;
+            while(tempC!=')')
+            {
+                tempC =st.pop();
+            cout << tempC << endl; 
+                
+                ans +=tempC;
+            }
+            st.pop();
+            continue;
+        }
+
+        else if (currentPriority>=prevPriority)
+        {
+            st.push(ch);
+            prevPriority =currentPriority;
+            continue;
+        }
+
+        st.push(ch);
+
+    }
+
+    cout << st.peek() << endl;
+    while (!st.isEmpty())
+        ans +=st.pop();
+    return ans;
+}
+
+int main(){
     
-    string exp ;
-    cout<<"enter the postfix expression : ";
-    cin>>exp;
+    string str = "(a+b)*c";
 
-    cout << "infix expression: "<<Pst_to_In(exp)<<endl;
-    cout << "prefix expression: "<<Pst_to_Pre(exp)<<endl;
-
-    return 0;
+    str = infixToPrefix(str);
+    cout << str;
 }
