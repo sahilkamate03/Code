@@ -7,12 +7,9 @@ void multiply(int a, int b)
 	int n1=log10(a);
 	int n2=log10(b);
 	// cout << n;
-	for (int i=0; i<n1; i++)
+	for (int i=0; i<n2; i++)
 	{
-		for (int j=0; i<n2; j++)
-		{
-			
-		}
+		
 	}
 }
 
