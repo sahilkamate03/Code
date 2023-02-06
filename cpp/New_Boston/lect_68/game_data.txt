@@ -1,0 +1,7 @@
+game 10
+parent 100
+pencil 90
+ninja -10
+monster -100
+halo 0
+nfs 0
