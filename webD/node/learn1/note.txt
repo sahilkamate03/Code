@@ -1,0 +1,12 @@
+In Node.js, the 'data' event is emitted by a readable stream when data is available to be read from the stream. When a listener is registered for the 'data' event on a readable stream, the listener function is called every time a chunk of data is available.
+
+In the context of web development with Node.js, the 'data' event is often used to read the request body of an incoming HTTP request from a client. When a client sends data in the request body (for example, when submitting a form), the data is sent in chunks, and the 'data' event is emitted for each chunk of data. By listening for the 'data' event on the request object, a Node.js server can read the request body data as it is being sent by the client.
+
+For example, in the following code snippet, the 'data' event is listened for on the request object, and the callback function is called every time a chunk of data is available:
+
+javascript
+Copy code
+req.on('data', (chunk) => {
+  // process the chunk of data
+});
+The chunk parameter passed to the callback function is a Buffer object that contains the chunk of data read from the stream. The callback function can process the data in whatever way is necessary (for example, by concatenating the chunks to form a complete body string), and the 'end' event can be used to signal that all the data has been read.
