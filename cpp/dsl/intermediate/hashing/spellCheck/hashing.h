@@ -5,6 +5,19 @@
 #define MOD 53	
 using namespace std;
 
+class Node
+{
+private:
+	string word;
+    Node* next;
+    
+public:
+	Node() : word{"default"}, next{NULL} {};
+	Node(string word) : word{word}, next{NULL} {};
+	
+	friend class hashTable;
+};
+
 class hashTable
 {
 private:
