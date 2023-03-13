@@ -1,0 +1,22 @@
+[
+    {
+        "prompt": "Install Dotnet 4.7.2",
+        "completion": "The HyWorks Controller v3.2-GA (v8493) or later will require .Net 4.7.2 and should be installed on the Windows Servers prior to the installation of the HyWorks Controller."
+    },
+    {
+        "prompt": "Prepare Microsoft SQL Server for HyWorks Deployment",
+        "completion": "Configure the SQL Server as follows to support the HyWorks Controller and clustering:"
+    },
+    {
+        "prompt": "Microsoft Sync Framework v2.1 (KB2703853)",
+        "completion": "The Microsoft Sync Framework is required only for HyWorks Controller clustering."
+    },
+    {
+        "prompt": "Install the Microsoft SQL Server Compact 4.0 SP1",
+        "completion": "The SQL Server Compact 4.0 SP1 is required to install the HyWorks Controller. SSCE is used by HyWorks session host agent and monitoring services for storing some data temporarily."
+    },
+    {
+        "prompt": "Provide User Logon as a Service Rights on Windows Server",
+        "completion": "For deployments, where SQL database configuration needs to be done with Windows Authentication, HyWorks Controller service must be configured to run with the specific user account. The provided user account must have logon as a service privileges on the system otherwise HyWorks Controller service may fail to start after the installation."
+    }
+]

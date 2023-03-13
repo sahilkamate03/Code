@@ -1,0 +1,214 @@
+[
+    {
+        "prompt": "24920",
+        "completion": "HyWorks does not support the selection of datastore cluster during deployment.  This issue is fixed and v3.4 has an integrated enhancement to select and use the datastore cluster for deployment."
+    },
+    {
+        "prompt": "24864",
+        "completion": "The selected Resource pool gets set to Default when the administrator selects \"cluster\" or \"host\" as the target location in provisioning profile.  This behavior is now improved to allow the administrator to select \"host\" or \"cluster\" and retain saved configurations."
+    },
+    {
+        "prompt": "24851",
+        "completion": "HyPrint with Linux VDI does not work when being accessed through HyLite.  The issue was due to a flag being sent incorrectly and has been fixed in v3.4-GA."
+    },
+    {
+        "prompt": "24716",
+        "completion": "License utilization limit was not working in case of a named user license.  The issue is fixed and named user licenses will now be used as per the set limits."
+    },
+    {
+        "prompt": "24390",
+        "completion": "If a Windows Session Host server provisioned via HyWorks was customized using Sysprep, the local administrator user password was getting reset and was not able to take remote of session host server.  This issue has been fixed in v3.4-GA, where in the Management Console, selecting the customization method as Sysprep will require the administrator password to be set."
+    },
+    {
+        "prompt": "24388",
+        "completion": "The Session host server or desktop agent stopped sending logs to the ARS/Syslog server, when the 'Share Client Info' flag was not set within the HyWorks Controller.  The condition has been fixed in v3.4-GA and logs will now be sent correctly to the configured ARS/Syslog server."
+    },
+    {
+        "prompt": "24387",
+        "completion": "When the \"Delete the VM after every reservation\" run field was set to empty for reservations imported from CSV, the feature was not working.  The empty value will be read as true and the reservations will have 'Delete VM after every reservation' as checked."
+    },
+    {
+        "prompt": "24383",
+        "completion": "Applauncher registry is not getting created on fresh  installation of Session Host server and no errors are displayed.  Appropriate logs are created in installer logs and also a warning will be shown on setup wizard for AppLauncher registry creation failure."
+    },
+    {
+        "prompt": "24365",
+        "completion": "Device remained Active for a long time and did not switch to an offline state even though the \"Last Seen\" field displayed correct information.  This issue was identified for devices where the Active state did not have any sessions. This is fixed in v3.4-GA and devices should now show the status correctly."
+    },
+    {
+        "prompt": "24198",
+        "completion": "A Domain trust issue was observed on the VMs after recompose for deployments that had deployed Active Directory Sites and Services as well as those that had multiple DCs deployed in a single site.  This was due to duplicate actions taken by the Controller and the Desktop Agent for deleting the objects on DCs on recompose. Enhancements have been made and object deletion has been made configurable on the Controller as well as the Desktop Agent for better handling of such cases."
+    },
+    {
+        "prompt": "23999",
+        "completion": "Failed to fetch user entitlements with a 'TimeOut  Error' in the Management Console for a large number of user entitlements.  This issue has been fixed in v3.4-GA."
+    },
+    {
+        "prompt": "23993",
+        "completion": "The logs downloaded from the HyWorks Controller Management Console were not in proper order.  This issue is fixed in the latest HyWorks Controller release."
+    },
+    {
+        "prompt": "23939",
+        "completion": "Disabling the \"Advance  Settings - User Life Span and Device life span\" field was not working correctly in disabling the automatic user/device deletion.  Issue is fixed in v3.4-GA."
+    },
+    {
+        "prompt": "23894",
+        "completion": "Shared License Pool limit was set as 0 even when the Unlimited shared license pool usage is enabled for the Default org. This intermittently resulted in failure upon user logon with a license exceed error.  This issue is fixed in v3.4-GA so that at the creation of a new child organization, the default organization settings will not be affected."
+    },
+    {
+        "prompt": "23809",
+        "completion": "A \"No desktop found with ID\" error was being displayed when the GM that was selected had IPv6 enabled on MS Azure.  Support to handle IPv6 has been added to fix this issue in v3.4-GA."
+    },
+    {
+        "prompt": "23703",
+        "completion": "Call to deregister VM from the domain was not initiating at the Controller for the Hyper-V/SCVMM provider  Support to deregister VMs from the domain has been extended to Hyper-V and SCVMM."
+    },
+    {
+        "prompt": "23602",
+        "completion": "A confusing status message of \"Successful\" was being shown as a response to the DVM refresh call for VMs not having any IP Address listed.  Behavior has been improved to show an appropriate message for VMs that do not have an IP address."
+    },
+    {
+        "prompt": "23376",
+        "completion": "Cloning was failing when a vSphere user configured in HyWorks did not have adequate permissions to read the Gold master folder information.  Better handling of the issue has been implemented."
+    },
+    {
+        "prompt": "23090",
+        "completion": "HyLabs (Login via HyLite) did not work when the auth domain was configured in HyWorks as \"Built-in-Built-in\".  This issue is fixed. HyLabs login should now work for built-in-built-in auth domain configuration."
+    },
+    {
+        "prompt": "22865",
+        "completion": "GM connect in HyLabs was not working for Workgroup user.  Issue was associated only with #23090 and is fixed in v3.4-GA."
+    },
+    {
+        "prompt": "22019",
+        "completion": "User authentication to the RMS portal (HyWorks) failed when the authentication server was used through the parent organization.  HyLabs has not been tested in multi-organization environment, but this issue has been fixed to enable HyLabs usage and verification in a multi-organization environment."
+    },
+    {
+        "prompt": "21873",
+        "completion": "Failure to create a non-persistent pool was reported even though a restore point was created. The issue caused a failure for post VM power-on restore point creation.  This issue was fixed in v3.4-GA."
+    },
+    {
+        "prompt": "21746",
+        "completion": "Registered device data was getting lost intermittently after a controller upgrade.  A fix to this issue has been provided in v3.4-GA, where devices will not be deleted post upgrade."
+    },
+    {
+        "prompt": "21425",
+        "completion": "Accelerated networking is not working for cloned VMs on MS Azure, even after the Gold master is set to have accelerated networking.  Network acceleration is now working correctly on cloned VMs with v3.4-GA."
+    },
+    {
+        "prompt": "21327",
+        "completion": "Backup creation failed when the HyWorks database was configured using Windows authentication.  This issue has been fixed in v3.4-GA."
+    },
+    {
+        "prompt": "20887",
+        "completion": "The status message for power operation failure when the Hyper-V was unreachable was not displayed but logs were being created, causing confusion for the administrator about whether the operation was successful or not.  An appropriate error status message is now being shown in v3.4-GA."
+    },
+    {
+        "prompt": "20789",
+        "completion": "A duplicate entry was being created when editing the participant from the participant page.  This issue has been fixed in v3.4-GA."
+    },
+    {
+        "prompt": "20770",
+        "completion": "When removing controllers from HA and then re-adding them to the HA, the entry for the secondary controller was not visible on the primary.  The Controller waits for the sync to complete before adding an entry for the controller. This was failing to happen when the controller had a large amount of data to sync. This issue has been fixed by implementing another thread for adding controllers in primary and secondary respectively."
+    },
+    {
+        "prompt": "20712",
+        "completion": "Duplicate users could be added as participants, causing login failures with a grammatically incorrect error being displayed.  v3.4-GA has a fix for this issue and the error message has been corrected."
+    },
+    {
+        "prompt": "20622",
+        "completion": "In a rare condition, the controller created inumerous VM deletion jobs after the desktop pool recompose and started to respond very slowly.  v3.4-GA has a fix for handling such cases."
+    },
+    {
+        "prompt": "20392",
+        "completion": "If the administrator added the same user in 2 different groups in the Management Console, it opened in 2 different browser tabs and the user was added to the wrong group.  This issue has been fixed in v3.4-GA."
+    },
+    {
+        "prompt": "20335",
+        "completion": "Logging in with leading spaces before the username resulted in an authorization failure on the HyWorks Controller.  The Controller will be truncating leading or trailing spaces, if any are added by the client."
+    },
+    {
+        "prompt": "20185",
+        "completion": "The user search was not working in the built-in group when the group had 100+ users.  Improvisations have been made in v3.4-GA to handle this issue."
+    },
+    {
+        "prompt": "20004",
+        "completion": "Launching the browser with more than 3 arguments in the application command line was not working.  This issue has been fixed in v3.4-GA."
+    },
+    {
+        "prompt": "19995",
+        "completion": "Snapshot restore was shown as successful but the restore point (Snapshot) was not found on the provider.  It was a rare case, where the HyWorks-managed restore point was deleted by the administrator, but the condition has been handled and an appropriate status and logs will now be shown."
+    },
+    {
+        "prompt": "19989",
+        "completion": "If users continuously connect and reconnect sessions on the Linux SHD server, agent and monitoring service were going into a non-responsive state.  The HyWorks Desktop Agent and Monitoring services have been better equipped for this type of session load."
+    },
+    {
+        "prompt": "19980",
+        "completion": "The Remove button on the 'Entitlement' screen within the Application Edit wizard was not working when more than 1 group was added  It was a UI issue and has been fixed in v3.4-GA."
+    },
+    {
+        "prompt": "19918",
+        "completion": "DVM agent logs were insufficient in analyzing the cause of app/desktop session logout.  Logs before every logout in SHD are being added: e.g. \"Logging-Out session as VIP attachment failed for user: {Username} and {wtsId}\"."
+    },
+    {
+        "prompt": "19917",
+        "completion": "Proper logs were not being displayed within the Desktop Agent when the application was not found at configured path.  Appropriate logs will now be shown within the Linux DVM Agent."
+    },
+    {
+        "prompt": "19886",
+        "completion": "Applauncher.exe was replaced if the sessions were running on the session host server during an upgrade.  Appropriate implementations have been made in v3.4 to handle upgrade cases."
+    },
+    {
+        "prompt": "19875",
+        "completion": "When switching controllers with VIP for controller was enabled, an  incorrect mode was sent to the SHD.  This issue has been fixed in v3.4-GA."
+    },
+    {
+        "prompt": "19159",
+        "completion": "The built-in group name was not completely shown even through space to do so was available within the Management Console.  This was a UI issue and has been fixed."
+    },
+    {
+        "prompt": "18763",
+        "completion": "GM connect: Launch URL should have used advance config.  In previous versions, the GM connect launch URL was not configurable. Any changes made to the URL on HyLite was causing issues. GM Connect launch URL can now be configured from the HyWorks Management Console -> Advanced settings."
+    },
+    {
+        "prompt": "18681",
+        "completion": "The Controller was unable to refresh the deployed SHD desktop details from the desktop provider and was marking the VMs as missing.  Improvisations have been made to handle this case and VMs are now being appropriately refreshed."
+    },
+    {
+        "prompt": "18621",
+        "completion": "A firewall rule was created for the default RDP port 3389 when the customized RDP port was used.  The Desktop agent will now create the firewall rule for the configured RDP port only."
+    },
+    {
+        "prompt": "18572",
+        "completion": "The log deletion thread was running on the session node.  This has been improved in v3.4-GA, session nodes will not delete old logs."
+    },
+    {
+        "prompt": "18457",
+        "completion": "When under load, the broker node details were nullified and it behaved like the primary management node.  This issue has been fixed in v3.4-GA."
+    },
+    {
+        "prompt": "18414",
+        "completion": "Gold master information (CPU, Memory, HDD, OS etc.) were not displayed within the UI.  Fixes have been incorporated in v3.4-GA."
+    },
+    {
+        "prompt": "18391",
+        "completion": "The session host and controller installation logs have been improved to include details of Windows role installation, registry configurations, etc."
+    },
+    {
+        "prompt": "17976",
+        "completion": "With HyLabs under load, errors (deadlock) occurred on license checking and logout in HyLabs.  Appropriate performance improvements have been incorporated in v3.4-GA to handle these cases."
+    },
+    {
+        "prompt": "17860",
+        "completion": "The entry for an un-managed SHD pool was not removed from the DB after it's deletion, causing the controller to attempt to fetch it's details.  Fixes have been incorporated in v3.4-GA."
+    },
+    {
+        "prompt": "17843",
+        "completion": "Desktop pool cloning was failing on Azure if the desktop prefix name had a space in it  Space handling has been incorporated in v3.4-GA"
+    },
+    {
+        "prompt": "17106",
+        "completion": "Recompose was not working due to a failure in the deletion of VMs on Nutanix (the provider became unreachable because of too many shutdown calls at the same time)  Advance configurations have been implemented to handle such cases. Max Concurrent Connection To Provider and Concurrent Operation, values for them can be set to 20 and 5 respectively."
+    }
+]

@@ -1,0 +1,149 @@
+
+    {
+        "prompt": "Session Host IP Virtualization for both Linux and Windows-based Session Host Servers",
+        "completion": "HyWorks v3.4 has an integration for the virtual IP address feature for multi-user Windows and Linux session host servers. This feature provides a unique IP address to each session on the session host server. The virtual IP helps in identifying separate users on the network that are all working from the same session host server.This feature is configured through the HyWorks Controller Management Console.\nThis feature is supported by both Linux and Windows session host servers for shared hosted desktop and application sessions.\nVirtual IP can be applied to all or to specific processes.\nAdministrators can choose to block the session if the virtual IP address is not available (by providing a session only when the virtual IP is available).\nVirtual IPs can be temporarily or permanently assigned."
+    },
+    {
+        "prompt": "Session Recording",
+        "completion": "HyWorks v3.4 has a feature that will enable recording of sessions on shared session hosts or on personal virtual desktops. This feature can be configured using the recording profile in the HyWorks Management Console. All the recorded sessions will be listed within and can be viewed through the HyWorks Management Console.The following controls are provided for session recording:An option to enable or disable session recording for a specific pool, applications or users. Recording profiles are attached to HyWorks connection profiles.\nAn option to record only at specific intervals, at the start of a session, for a specific network IP address or at the launch of a specific application/process.\nProvide sessions only when recording is possible.\nAn option to pause recording if the user session is found inactive for the configured minutes.\nSupport for MP4 and MKV formats.\nOptions to control framerate, recording visual (Black & White or Color), resolution (800x600 to 3840x2160), enable or disable transcription.\nControllable recording upload time. \nA new system role 'Recording Auditor' has been added. Users that have a Recording Auditor role will be able to view and play recordings through the HyWorks Management Console."
+    },
+    {
+        "prompt": "Nutanix Flow Integration",
+        "completion": "Nutanix Prism Central provides an option to assign categories to different VMs. It delivers advanced network security, providing visibility into the virtual network, application-centric protection from network threats, malware, ransomware and security and compliance monitoring.HyWorks v3.4 has an integration for the Nutanix flow, where administrators can choose to apply categories to desktop pools or desktop VMs. This will enable organizations to deploy software-defined virtual network security without the complexity of installing and managing additional products that have separate management and independent software maintenance requirements."
+    },
+    {
+        "prompt": "Integration of new cloud providers - Oracle and AWS (Amazon Web Services)",
+        "completion": "HyWorks v3.4 has integrated support for Oracle and AWS cloud service providers. Currently these providers are in Beta phase.The integration has also been extended to HyLabs."
+    },
+    {
+        "prompt": "Support for New Linux Flavors",
+        "completion": "HyWorks v3.4 has support for new Linux OS flavors:Red Hat Enterprize Linux v7.9\nUbuntu Boss v8\nUbuntu Gnome 20.04"
+    },
+    {
+        "prompt": "User Logon using Random Password",
+        "completion": "In a workgroup environment, HyWorks can be used to provide session connection with a randomly generated password at all times. The feature will ensure:Passwords are being generated randomly during connection\nAdministrators will not have access to user passwords in the HyWorks built-in directory"
+    },
+    {
+        "prompt": "Site configurations and desktop pool DC-DR support",
+        "completion": "HyWorks v3.4 will provide an option to define sites through the Management Console. \nDesktop pools can be configured to provide access to local or remote sites. A desktop pool configured for remote site will remain inaccessible until the administrator triggers disaster recovery for the remote site.\nOnce DR is activated, all desktop pools configured for the remote site will become accessible."
+    },
+    {
+        "prompt": "Option to make provisioned desktops members of AD group(s)",
+        "completion": "On the Desktop Pool wizard -> Customization screen, the option to mention AD groups has been provided. As part of the system customization process, the new computer object will be made a member of the AD groups mentioned here."
+    },
+    {
+        "prompt": "Installer -  Session Host Installer is removed from the Controller Setup",
+        "completion": "In earlier versions of HyWorks Controllers, the Controller setup had an option to install the session host servers. With v3.4, session host servers will be installed using a separate installer."
+    },
+    {
+        "prompt": "Option to Choose Datastore Cluster (VMware) for Deployment",
+        "completion": "v3.4 of HyWorks Controller is enhancing the support for VMware object hierarchy. Earlier versions did not have the option to choose a Datastore cluster object. In v3.4, Datastore cluster objects will be shown and will be selectable through the HyWorks Management Console."
+    },
+    {
+        "prompt": "Integration of the Diagnostic Tool",
+        "completion": "The diagnostic tool can help with diagnosing problems with the system (HyWorks Controller/Session Host/Desktop VM) by evaluating overall configurations, service and system status. The diagnostic tool will also collect all system information needed by the support team that is normally asked to the customer, such as the product version, operating system etc.v3.4 of HyWorks has an integrated diagnostic tool, which can be run through the HyWorks Controller Management Console if the agent on the target system (Session Host/ Desktop VM/HyWorks Controller) can be contacted. If this option is not working, the tool can also be located at the following location:HyWorks Controller: \\<Controller Installation Directory>/Service/DiagnosticsTool\nHyWorks Session Host (Windows): \\<Session Host Installation Directory>/SessionHost/DiagnosticsTool\nHyWorks Desktop VM (Windows): \\<DVM Tools Installation Directory>/HyWorks Desktop Agent/DiagnosticsTool"
+    },
+    {
+        "prompt": "Configurable Behavior for Domain De-registration of Provisioned VMs on Recompose",
+        "completion": "The previous version of HyWorks Controller was trying to deregister provisioned VM entries from all discoverable DCs. For small deployments, this worked but for large deployments with too many DCs, the deregister calls were taking too much time, failing for unreachable DCs and also causing some conflicting results. To improve this behavior, the following configurable advanced settings have been provided:Remove the VM from the domain controller option: Set this option as 1 to remove the VM from all discoverable domains, and set it as 2 to remove from specified domain controllers\nUn-register machine from domain option: Set as 0 to disable, set as 1 for \"only during pool or VM destroy (delete from disk)\", and set as 2 for \"unregister on VM delete (during Pool delete and in recompose/recreate)\"\nDomain name list to remove desktop: if the \"Remove VM From Domain Controller Type\" option is set to 2 (delete only Specified Domain Controller), then specified domain names will be used. This field accepts comma separated values to mention multiple DCs."
+    },
+    {
+        "prompt": "HyWorks Controller Management Console Login via HySecure SAML App",
+        "completion": "Latest HyWorks Controller supports logging into the Management Console via SAML from HySecure. This will require the latest HySecure release which has the required changes to support this feature.The feature will be controlled via the Advance Configurations tab:Management Console login Option: Set as 0 for \"HyWorks Portal only\", set as 1 for \"Saml only\" and set as 2 for \"HyWorks Portal and SAML\".\nSAML-IDP Endpoint URL: URL for the application configured on IDP, Management console send SAML request for authentication.\nSAML-Certificate: SAML certificate is used to validate SAML response.\nSAML- Assertion Consumer Service Url: The ACS URL is an endpoint on the Management Console that the identity provider will redirect to with its authentication response.\nSAML Group Attribute name: Attribute name for the group in SAML response\nSAML- Issue URL: Issuer URL - Unique identifier of the IdP. Formatted as a URL containing information about the IDP so the SP can validate that the SAML assertions it receives are issued from the correct IDP.Changes in HyWorks Management Console"
+    },
+    {
+        "prompt": "HyWorks Management Console Revamp",
+        "completion": "The HyWorks Management Console is completely refurbished to make it easy to use. The changes include:Grouping menus in a better and more logical way\nArranging menus in three levels\nThemes and colors for better appearance\nSeparating Session Servers and connectors for easy management and visualization\nRenaming of some objects and controls for better understanding such as Session Providers are renamed to Connectors\nOld VIP configurations are removed from the Session provider's Add/Edit wizard. With new implementations, VIP settings are applied on Session teams and Desktop Pools/Apps.\nClient group menu is renamed to Classification Rules"
+    },
+    {
+        "prompt": "New Screen to View Recorded Sessions",
+        "completion": "A new screen (Monitor - Session Recordings) has been added where administrators will be able to view and play recorded sessions."
+    },
+    {
+        "prompt": "Run Diagnostic Tool from the Management Console",
+        "completion": "The HyWorks Management Console will have option to run the diagnostic tool on the following registered objects:HyWorks Controllers: Management Console -> System -> Controllers -> Select HyWorks Controller -> Troubleshoot\nHyWorks Session Host: Management Console -> VDI -> Session Servers -> Servers -> Select Session Host Server -> Troubleshoot\nHyWorks Desktop VM: Management Console -> VDI -> VM -> Select VM -> Troubleshoot"
+    },
+    {
+        "prompt": "New Option in Connection Profiles",
+        "completion": "The following new options have been added within the connection profiles:Local Resources -> Allow RDP Plugins -> Accops Web Request Redirection\nAdditional Settings -> Session Recording Profile\nAccess Settings -> Window Client Session Launcher Option (Built-in, Legacy (MSTSC), Windows Desktop Client (MSRDC), PC-over-IP Protocol (PCoIP))Enhancements in Capacity Plan"
+    },
+    {
+        "prompt": "Support for DC-DR",
+        "completion": "Deployments where a shared hosted desktop pool has been configured for a remote site can be configured to have the following configurations:Minimum % of VMs to be provisioned, when disaster recovery not active: This option will keep a minimum number of VMs provisioned for inactive DR pools.\nMinimum powered on VM(%), when disaster recovery not active: This option will keep a minimum number of VMs powered on for inactive DR pools.With DR activated, the capacity plan will takeover the remaining deployment and session host availability."
+    },
+    {
+        "prompt": "On-demand Provisioning and Capacity Management",
+        "completion": "In the earlier version, the capacity plan was triggered at pre-configured intervals only, even in cases where users were getting onboarded and capacity was not as per the objectives. Enhancements have been made in v3.4, where if users are being connected and if the capacity allows provisioning and readying new session host servers, the plan will be triggered immediately.\nUsers will be notified of a short waiting period as the shared hosted desktops are being readied for them.Changes in Session Host Servers - Windows"
+    },
+    {
+        "prompt": "Integration of Latest Sub-modules",
+        "completion": "The following components have been integrated in HyWorks Session Host:SessionServerExtension: 3.3.1.17\nAccops User Experience Manager (AUEM): 3.1.0.204\nNetwork Activity Monitor (Uacnde) Driver: 1.2.0.9\nDiagnosticsTool: 3.4.0.17"
+    },
+    {
+        "prompt": "Web Request Redirection in Windows Session Servers",
+        "completion": "A new session extension has been added to the Windows Session Servers, which can be used to redirect digital tokens and web requests. This feature integration will help enable isolated usage of digital tokens in a virtualized environment."
+    },
+    {
+        "prompt": "Integration of IP Virtualization",
+        "completion": "Windows session host server has an integration for IP virtualization."
+    },
+    {
+        "prompt": "Integration of Session Recording",
+        "completion": "Previous versions of the DVM Tools had an integrated session recording feature, but it was executed and managed completely via scripts and manual intervention, with no centralized management and no viewing capabilities in the HyWorks Management Console. \nThe new DVM Tools has an integrated session recording modules, which can be executed and managed through the HyWorks Management Console."
+    },
+    {
+        "prompt": "Diagnostic Tool Integration",
+        "completion": "HyWorks Session Host v3.4-GA has an integrated diagnostic tool, which can be executed through the HyWorks Management Console or directly at following location on the session host server:HyWorks Session Host (Windows): \\<Session Host Installation Directory>/SessionHost/DiagnosticsTool"
+    },
+    {
+        "prompt": "Integration of the Latest Sub-modules",
+        "completion": "The following components are integrated in HyWorks DVM Tools:SessionServerExtension: v3.3.1.17\nAccops User Experience Manager (AUEM): v3.1.0.204\nNetwork Activity Monitor (Uacnde) Driver: v1.2.0.9\nDiagnosticsTool: v3.4.0.17\nBuilt-in USB Redirection Driver: v9.2.2384.0"
+    },
+    {
+        "prompt": "Option to Remove Computer Object from Specified Domain Controllers",
+        "completion": "Earlier versions of the HyWorks Desktop Agents were attempting to delete computer object from all discoverable DCs. v3.4-GA Desktop agent has registry based configurations, which can be used to disable computer object deletion completely or remove only from the specified domain controllers.Registry Location: HKEY_LOCAL_MACHINE\\SOFTWARE\\Accops\\DVMAgent\\ADVANCE SETTINGS\nRegistry Key: EnableComputerObjectDeletionFromDC, Value: True or False (If false, objects will not be deleted from DCs)\nRegistry Key: DeleteFromSpecifiedDC: If set as *, objects will be deleted from all discoverable DCs,  Comma separated DCs: Agent will try to delete the computer object from only the specified DCs."
+    },
+    {
+        "prompt": "Configurations Optimizations",
+        "completion": "The following enhancements have been made for the HyWorks Desktop Agent and Session Hosts:Single Registry Set for External Logging: In earlier versions, the session host and desktop agent were reading information from a different registry locations and may have caused confusion. In this version, there will be a single registry location: HKEY_LOCAL_MACHINE\\SOFTWARE\\Accops\\DVMAgent\\ADVANCE SETTINGS\\EXTERNAL LOG SETTINGS\nRe-arrange Registry Keys: Registry-based configurations are grouped in a logical structure:\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Accops\\DVMAgent: Has global DVM agent configurations\nAdvance Settings: Common advance configurations\nExternal Log Settings: For external logging configurations\nSession Recording: Session recording settings\nVIP Settings: All VIP related settings\nDVM Push: Scale Booster Configurations\nEvents: Configurations of all system events, if any actions have to be configured\nSuspend Process: All configurations related to process suspension\nUsers: User data to be stored for active/disconnected sessionsLinux VDI (Session Host/ Personal Desktops)The following changes are integrated for Linux VDI:"
+    },
+    {
+        "prompt": "IP Virtualization Integration",
+        "completion": "New Linux DVM Tools in Linux Session Host Servers has integrated support for VIP feature."
+    },
+    {
+        "prompt": "New Linux Flavor Support Added",
+        "completion": "The following new platforms are supported in HyWorks with this version:Ubuntu BOSS\nRHEL\nUbuntu Gnome 20.04"
+    },
+    {
+        "prompt": "Enhancing communication between the Controller and the Linux Session Host Servers",
+        "completion": "In the earlier versions, communication between the controller and the Linux session host server was one sided i.e. from the Controller to the session hosts. Going forward, the session host server (Desktop agent) is sending updates to the HyWorks Controller."
+    },
+    {
+        "prompt": "Pre and Post HyPrep Script Execution Support",
+        "completion": "The earlier version of Linux DVM Tools did not have any pre or post HyPrep script execution support. The latest version of DVM Tools for Linux will have these implementation.Script Path /etc/edcdvm/linuxDvm/scripts/\nScript Names: HyprepPreScript.sh, HyprepPostScript.sh"
+    },
+    {
+        "prompt": "Pre and Post AppLauncher Script Execution Support",
+        "completion": "The latest version of DVM Tools for Linux has implementations to support script execution before and after AppLauncher execution.Script Path: /etc/edcdvm/linuxDVM/scripts\nScript Names: AppLauncherPostScript.sh, AppLauncherPreScript.sh"
+    },
+    {
+        "prompt": "Monitoring Service Integration",
+        "completion": "The latest version of Linux DVM Tools have monitoring service implementation. This feature integration will help with the following:Monitoring resource utilization for Linux Session Host servers\nAdaptive Load Balancing based on resource utilization"
+    },
+    {
+        "prompt": "Support for Direct RDP and Console Block",
+        "completion": "This feature is available for Windows Session Host servers and is implemented in latest version of Linux DVM Tools. Based on the configurations, the Linux session host or personal desktop will now:Log off any remote desktop sessions taken directly and not via Accops HyWorks Controller\nLog off any console session (if enabled)"
+    },
+    {
+        "prompt": "Accepting Calls from Authorized Controller",
+        "completion": "This feature is available in Windows Session Host server and DVM Tools from v3.3. V3.4 DVM Tools for Linux will have configuration where, if specified, the DVM agent will accept calls only from specified controllers. Any calls from any other controllers will be rejected.HyLabs Features and EnhancementsThe following new features and enhancements are included in v3.4:"
+    },
+    {
+        "prompt": "Validating Client Groups on Reservation Connect",
+        "completion": "In previous versions of HyLabs, the client group validation happened only during user logon. In v3.4, changes are incorporated so that the client groups will be validated on reservation connect operations as well. \nThis change also requires the latest HySecure (HyLite) to share WAN IP with the HyWorks Controller during the \"Connect\" operation."
+    },
+    {
+        "prompt": "Self-study Creation Control",
+        "completion": "v3.4-GA has an additional layer of control for self-study creation and access:Creation Control: Users will be evaluated for self-study creation. If the Gold master is restricted, and the user is accessing HyLabs from outside of the permitted client group, he/she will not be allowed to create a self study.\nAccess Control: When the Gold master is not restricted for creation, users will be able to create a self-study from any location but control can only be provided during access. Access will only be available from specified client groups."
+    }

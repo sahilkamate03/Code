@@ -1,0 +1,26 @@
+[
+    {
+        "prompt": "Session Host Overview",
+        "completion": "Accops HyWorks DVM Tools is an integrated software package, installed \non the desktop virtual machines residing on hypervisors like VMware ESXi, Microsoft Hyper-V or Nutanix AHV. HyWorks DVM Tools facilitates trouble-free access of the desktop to end-users."
+    },
+    {
+        "prompt": "Session Host Download Links for Latest Packages",
+        "completion": "Check and download the latest HyWorks DVM Tools from the Accops Support portal or website."
+    },
+    {
+        "prompt": "Session Host Prerequisites",
+        "completion": "HyWorks DVM Tools for Windows requires Dot NET 4.7.2. Refer to the Software Requirements section for details."
+    },
+    {
+        "prompt": "Session Host Silent mode Installation steps (optional)",
+        "completion": "Use below given command to install the HyWorks DVM Tools for Windows silently:"
+    },
+    {
+        "prompt": "Session Host Installation steps",
+        "completion": "\n\nLog in using user credentials with local administrator privileges on the dedicated desktop.\n\n\nDownload HyWorksDVMTools.exe. Verify the MD5 sum of the downloaded file.\n\n\nDouble click and launch the Installer. Click Next to proceed.\n\n\n\nAccept the License Agreement by clicking I Agree.\n\n\n\nSelect the modules to be installed and click Next.\n\n\n\nChoose the destination folder and click Install to start the installation process.\n\n\n\nOnce the installation is complete, click Finish. In case of an upgrade, you will be a prompted to reboot the desktop VM. The installation will be complete after the machine is rebooted.\n\n"
+    },
+    {
+        "prompt": "Session Host Installation Logs",
+        "completion": "HyWorks installation logs can be used for troubleshooting and verification purposes. Installation logs are created at the following location:"
+    }
+]

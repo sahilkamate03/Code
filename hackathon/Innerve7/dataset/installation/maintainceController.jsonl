@@ -1,0 +1,22 @@
+[
+    {
+        "prompt": "Session Host Add New Components",
+        "completion": "If an Administrator has installed only one of the Accops HyWorks\nController components i.e., the Accops HyWorks Controller Service or the Accops HyWorks Management Console, then re-running the Installer will provide the option to add new components. This will allow the installation of the remaining components of the Accops HyWorks Controller. Use the steps given below to add new components to the Accops HyWorks Controller:"
+    },
+    {
+        "prompt": "Session Host Upgrade HyWorks Controller",
+        "completion": "\nNote\n\n\nUpgrading over HyWorks v2.5 with the Embedded DB is not supported with HyWorks v3.3 or later versions. The later versions only support Microsoft SQL Server for database.\n\n\nFor upgrading any production or evaluation deployment, a thorough analysis must be done and for any assistance contact Accops support.\n\n\n"
+    },
+    {
+        "prompt": "Session Host Repair",
+        "completion": "The repair installation flow will only be enabled when the system has at least one of the Accops HyWorks Controller components installed and the Administrator runs the same installer setup as the installed version. "
+    },
+    {
+        "prompt": "Session Host Uninstall",
+        "completion": "The Uninstall flow will be enabled when the system already has an existing\ninstallation of Accops HyWorks Controller and the Administrator re-runs the same or a newer installation. To uninstall one or more components, follow the\nsteps listed below:"
+    },
+    {
+        "prompt": "Session Host Installation Logs",
+        "completion": "HyWorks installation logs can be used for troubleshooting and verification purposes. Installation logs are created at the following location:"
+    }
+]

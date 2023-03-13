@@ -1,0 +1,22 @@
+[
+    {
+        "prompt": "Session Host Installation Wizard should not be left unattended",
+        "completion": "HyPrint Installation Confirmation"
+    },
+    {
+        "prompt": "Session Host Error 'Appropriate .Net application pool in the IIS (NOT FOUND)'",
+        "completion": "The error is displayed while installing Accops HyWorks Management\nConsole, though .Net 4.5 has been installed and ASP.Net is enabled in\nWindows Server 2008 R2 machine."
+    },
+    {
+        "prompt": "Session Host Error Service could not be started during installation",
+        "completion": "Sometimes when the server where HyWorks Controller/ Session Host servers\nare being installed, is not having enough resources, HyWorks services\nmight fail to restart and during installation it will show the error and\nwill wait for user input."
+    },
+    {
+        "prompt": "Session Host Controller Installation on Microsoft WVD",
+        "completion": "Installation of HyWorks Controller on Microsoft WVD will require some additional configurations."
+    },
+    {
+        "prompt": "Session Host Resolving Dot Net Installation Issue on Windows 2008 R2-SP1",
+        "completion": "HyWorks Controller installation requires dot net 4.7.2 or later installed on Windows servers. Windows 2008R2-SP1 supports installation of .Net 4.7.2. \nIn this section, steps to resolve a dot net installation issue on 2008 R2-SP1 will be provided."
+    }
+]

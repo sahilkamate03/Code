@@ -1,0 +1,3 @@
+[
+    {"prompt" : "Hardware Requirements ", "comletion" : "Minimum configuration for Windows server to be configured as Accops HyWorks Controller: Minimum 4GB RAM 4 vCPUs 10 GB free space on installation disk for installation, dependencies and post installation management files Note This is minimum requirement for configuring HyWorks Controller on Windows server but appropriate server sizing should be done as per expected load and roles configurations."}
+]

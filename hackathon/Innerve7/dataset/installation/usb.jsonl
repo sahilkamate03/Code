@@ -1,0 +1,26 @@
+[
+    {
+        "prompt": "Session Host SEP Versions and Installation Requirement",
+        "completion": "\n\nClient Side (Hy2000/3000/4000): v3.0 (Integrated with HyDesk)\n\n\nClient Side (Windows/Hy3020): Default v3.03\n\nFor 64bit Client OS: v4.07 (uninstall default SEP Client v3.03)\n\n\n\nServer Side: 4.07 (need to be installed and configured separately)\n\n"
+    },
+    {
+        "prompt": "Session Host Operating System Support",
+        "completion": "\n\nServer side: WIN7, XP, Server 2008 R2 (32-bit, 64-bit), Server 2003\n    (32-bit, 64-bit);\n\n\nClient side: WIN7, WES7, Linux, ARM;\n\n\nLicense & policy servers: WIN7, WES7, XP, XPE, Server 2008 R2,\n    Server 20012 R2,\n\n"
+    },
+    {
+        "prompt": "Session Host SEP Component Installation",
+        "completion": "\n\nSEP License Server: License and Policy Management.\n\n\nSEP Server: Also referred to as SEPApp, needs to be installed on the\n    target DVM.\n\n\nSEP Client: A compatible SEP Client must be installed on the HyDesk\n    devices or the client machine.\n\n\nHyDesk Hy2000, Hy3000, Hy4000 consist of the SEP Client by default and\n    does not require any additional installation.\n\n\nHyDesk Hy3020: If the Server side module is v4.07, the SEP Client v4.07\n    should be used and any existing default SEP Client should be removed.\n\n\nWindows Client: for 64bit OSes, the SEP Client version 4.07 should\n    be used.\n\n\n\n"
+    },
+    {
+        "prompt": "Session Host Enable/Disable SEP, SEP Modules or Specific Devices",
+        "completion": "Configure redirection of specific devices and enable/disable specific modules from the SEP Client."
+    },
+    {
+        "prompt": "Session Host Troubleshooting",
+        "completion": "\n\nUSB Hard Disks appearing twice\nWhen the USB Hard disk is being redirected using the SEP, it appears twice in the\nDVMs. The issue can be solved by following the steps given below:\n\n\nLog in to the Administrator account and open the command prompt to execute the\n    following command: \n\nmountvol.exe /R\nmountvol.exe /N\n\n\n\n\n\nThe SEP4.7.0 SEP License Policy server by default runs on port 7829. If the requirement is to configure it on another port, follow the steps listed below:\n\n\nGo to directory C:\\Program Files\n    (x86)\\Cinfin\\CDS\\runtime\\conf\\\" file\n\n\nUpdate the port number\n\n\n\n\nMMR (Multimedia redirection) should be kept disabled on the SEP for\n    better audio and visual performance using HyWorks.\n\n"
+    },
+    {
+        "prompt": "Session Host References",
+        "completion": "\n\nUSB Redirection in HyWorks\n\n\nSEP User Manual\n\n"
+    }
+]

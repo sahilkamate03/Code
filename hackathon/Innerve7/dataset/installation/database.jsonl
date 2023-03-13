@@ -1,0 +1,3 @@
+[
+    {"prompt" : "Database Requirements", "completion" : "HyWorks Controller supports following versions of Microsoft SQL Server: Microsoft SQL Server 2019 Microsoft SQL Server 2017 Microsoft SQL Server 2016 Microsoft SQL Server 2014 Microsoft SQL Server 2012 Please refer section Preparing Microsoft SQL Server for HyWorks Deployment for detailed instructions on SQL Server configurations for HyWorks installation."}
+]

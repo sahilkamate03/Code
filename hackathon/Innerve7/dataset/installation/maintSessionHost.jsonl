@@ -1,0 +1,18 @@
+[
+    {
+        "prompt": "Session Host Upgrade HyWorks Session Host Server",
+        "completion": "\nNote\n\n\nAs the Session Host Server setup installs RDP extensions, upgrade might fail if active remote desktop sessions are running.\n\n\nThe Session Host server can be upgraded before or after upgrading the HyWorks Controller. But it is recommended to understand the compatibility between the HyWorks Controller and Session Host Server before upgrading. \n\nHaving Incompatible versions on the system will result in session/functionality failures.\n\n\n\n"
+    },
+    {
+        "prompt": "Session Host Repair HyWorks Session Host Server",
+        "completion": "\n\nGo to the Control Panel > Programs and Features\n\n\nClick HyWorks Session Host Server Module > Uninstall/Change to open the HyWorks Session Host Server Installation wizard in Maintenance mode. \n\n\n\nClick Repair and click Next to proceed.\n\n\nAll the Session Host Server components that will be\n    repaired should be listed. Click Repair to continue.\n\n\n\nWait for the repair process to be completed. Once complete, click Close.\n\n\n\n\nClick Yes, if prompted to reboot the Session Host server \n\n\n"
+    },
+    {
+        "prompt": "Session Host Uninstall HyWorks Session Host Server",
+        "completion": "\n\nGo to the Control Panel > Programs and Features\n\n\nSelect the HyWorks Session Host Server Module > Click Uninstall\n\n\nHyWorks Session Host Server Installation wizard should open in\n    Maintenance mode\n\n\n\nClick the Uninstall button and click Next to\n    proceed. It should list all the components that will be uninstalled\n\n\n\nClick Uninstall to continue. This should remove all HyWorks Session Host Server modules from the system.\n\n\n"
+    },
+    {
+        "prompt": "Session Host Installation Logs",
+        "completion": "HyWorks installation logs can be used for troubleshooting and verification purposes. Installation logs are created at the following location:"
+    }
+]

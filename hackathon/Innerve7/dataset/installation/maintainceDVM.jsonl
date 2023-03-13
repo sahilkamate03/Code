@@ -1,0 +1,14 @@
+[
+    {
+        "prompt": "Session Host Upgrade HyWorks DVM Tools",
+        "completion": "DVM Tools can be upgraded from the HyWorks Controller through:"
+    },
+    {
+        "prompt": "Session Host Uninstall HyWorks DVM Tools",
+        "completion": "\n\nGo to the Control Panel > Programs and Features.\n\n\nSelect the HyWorks DVM Tools Module > Click Uninstall.\n\n\n\nClick Yes continue.\n\n\n\nThe HyWorks DVM Tools Uninstall wizard will be displayed.\n\n\n\nSelect all the components that need to be uninstalled and click Uninstall to start the process.\n\n\nWait for the uninstallation process to finish. Follow the onscreen instructions, if prompted.\n\n\nThe wizard will prompt to reboot the machine:\n\n\nSelect Reboot now to reboot the system and finish the\n    un-installation [recommended]\n\n\nSelect the I want to manually reboot later option to reboot the\n    system later.\n\n\n\n"
+    },
+    {
+        "prompt": "Session Host Installation Logs",
+        "completion": "HyWorks installation logs can be used for troubleshooting and verification purposes. Installation logs are created at the following location:"
+    }
+]

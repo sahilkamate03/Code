@@ -1,0 +1,14 @@
+[
+    {
+        "prompt": "Important Options in HyWorks Controller Installation Wizard",
+        "completion": "Components to Install\nDuring installation, the following components of HyWorks management layer can be installed:"
+    },
+    {
+        "prompt": "High-level Workflow for Cluster Deployments (Combinations)",
+        "completion": "Using HyWorks Controller installation wizard administrator will be able to configure Windows server to perform specific role in HyWorks management. This section provides steps to deploy HyWorks Controller in specific role."
+    },
+    {
+        "prompt": "HyWorks Controller Installation Wizard Flow",
+        "completion": "This section provides details of HyWorks Controller installation for different types of deployments."
+    }
+]

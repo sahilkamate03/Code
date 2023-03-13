@@ -1,0 +1,22 @@
+[
+    {
+        "prompt": "Session Host Installation of the HyWorks VM Scale Booster",
+        "completion": "Prerequisites"
+    },
+    {
+        "prompt": "Session Host HyWorks VM Scale Booster Configuration",
+        "completion": "After a successful installation, the following configurations should be done\nto enable communication between the HyWorks VM Scale Booster and the HyWorks\nController:"
+    },
+    {
+        "prompt": "Session Host Enable VM Scale Booster on the Controller",
+        "completion": "Configuration on the HyWorks Controller"
+    },
+    {
+        "prompt": "Session Host Troubleshooting",
+        "completion": "\n\nIn case of Azure, the rule needs to be added on the Network Interface via the Azure portal for port number 5672 and 15672\n\n\nCheck the IP address of the Controllers in appsetting.json file\n\n\nCheck the Username and Hostname for the RabbitMq in the Advance config section on the Management Console\n\n"
+    },
+    {
+        "prompt": "Session Host Appendix",
+        "completion": "Change the default port of RabbitMQ"
+    }
+]

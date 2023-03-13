@@ -1,0 +1,30 @@
+[
+    {
+        "prompt": "Session Host Installation",
+        "completion": "To install Action Processor, follow below steps:"
+    },
+    {
+        "prompt": "Session Host Enable Controller to manage scheduler service",
+        "completion": "\nLogin into management console with user having super-admin privileges\nGo to Host management -> System -> Advance config\nApply filter 'Capacity Plan' in tags \nSet Manage Scheduler Service setting as True and click on Update to apply the changes\nIf this setting is true, then Scheduler service will run only on the primary node of the controller, on secondary HyWorks controller the service will be stopped.\nIf this setting is set as false, HyWorks Controller will not manage it and it will start and stop with system\n\n\n"
+    },
+    {
+        "prompt": "Session Host Installation and Configuration in Controller Cluster",
+        "completion": "If HyWorks Controllers are installed in cluster mode (2 or more controllers are configured for high availability), then"
+    },
+    {
+        "prompt": "Session Host Erlang OTP Installation",
+        "completion": "\nNote\n\nExact version of Erlang (OTP) is required.\n\n"
+    },
+    {
+        "prompt": "Session Host RabbitMQ Installation",
+        "completion": "\nNote\n\nExact version of RabbitMQ is required.\n\n"
+    },
+    {
+        "prompt": "Session Host ASP Dot NET Core Hosting Bundle Installation",
+        "completion": "\n\nConnect to server with user credentials having local administrator privileges\n\n\nCopy setup files of ASP.NET Core Hosting Bundle 3.1.14 \n\n\nDouble click on setup file dotnet-hosting-3.1.14-win.exe\n\n\n\n\nClose the setup wizard, once installation is completed\n\n\n"
+    },
+    {
+        "prompt": "Session Host Dot NET Desktop Runtime Installation",
+        "completion": "\n\nConnect to server with user credentials having local administrator privileges\n\n\nCopy setup files of .Net Desktop Runtime 3.1 (both x64 and x86)\n\n\nDouble click on setup file windowsdesktop-runtime-3.1.14-win-x86.exe\n\n\n\n\nClose the setup wizard, once installation is completed\n\n\n\nDouble click on setup file windowsdesktop-runtime-3.1.14-win-x64.exe\n\n\n\n\nClose the setup wizard, once installation is completed\n\n\n"
+    }
+]

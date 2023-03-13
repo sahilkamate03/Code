@@ -1,0 +1,6 @@
+[
+    {"prompt" : "HyWorks Installation Overview Objective", "completion" : "Installation section describes the installation process for different modules of Accops HyWorks product suite, which includes required softwares. detailed installation steps and troubleshooting.    "},
+    {"prompt" : "HyWorks Installation Overview Installers", "completion" : "Installation section describes the installation process for different modules of Accops HyWorks product suite, which includes required softwares. detailed installation steps and troubleshooting.    "},
+    {"prompt" : "HyWorks Installation Overview Installation Flow ", "completion" : "When installing the Accops HyWorks Controller Software, administrators are encouraged to follow the order specified below: System requirements Installation steps Troubleshooting, if any"},
+    {"prompt" : "HyWorks Installation Overview Important for Upgrade", "completion" : "Accops HyWorks Controller v3.4 cannot be upgraded with any previous skyControl versions or HyWorks v2.5 with embedded database"}
+]

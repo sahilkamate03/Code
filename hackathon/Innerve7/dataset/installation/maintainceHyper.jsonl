@@ -1,0 +1,14 @@
+[
+    {
+        "prompt": "Session Host Uninstallation",
+        "completion": "The sections given below describes the uninstallation process for the following servers:"
+    },
+    {
+        "prompt": "Session Host Upgrade and Repair",
+        "completion": "It is recommended to uninstall the existing setup from the Hyper-V/SCVMM server and before installing the updated version for the connector."
+    },
+    {
+        "prompt": "Session Host Installation Logs",
+        "completion": "HyWorks installation logs can be used for troubleshooting and verification purposes. Installation logs are created at the following location:"
+    }
+]
