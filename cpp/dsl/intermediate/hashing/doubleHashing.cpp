@@ -59,6 +59,7 @@ int c_map::linear_insert(int index, int prn, int score)
 	arr[index].score =score;
 	
 	return index;
+	
 }
 
 void c_map::insert(int prn, int score)
