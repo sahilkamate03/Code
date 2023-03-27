@@ -12,9 +12,11 @@ int main()
 	bt1.insert(9);
 	bt1.preOrderTraversal();
 	
-	BinaryTree bt2;
-	bt2.setRoot(mirrorBinaryTree(bt1.getRoot()));
-	bt2.preOrderTraversal();
+	cout << "Ht of tree: " << bt1.height(bt1.getRoot()) << endl;
+	bt1.print_nodes_highest_height(bt1.getRoot());
+	// BinaryTree bt2;
+	// bt2.setRoot(mirrorBinaryTree(bt1.getRoot()));
+	// bt2.preOrderTraversal();
 	// cout << compareBinaryTree(bt1.getRoot(), bt1.cloneBinaryTree(bt1.getRoot()) )<< endl;	
 
 	// BinaryTree bt2;

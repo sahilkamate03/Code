@@ -127,6 +127,41 @@ void BinaryTree::postOrderTraversal()
 
 // ------------------------------------------------Traversal Ends---------------------------------------------------------
 
+
+int BinaryTree::height(Node* root)
+{
+	int h=0;
+	if (root==NULL)
+		return 0;
+
+	int leftHeight =height(root->left);
+	int rightHeight =height(root->right);
+	int maxHeight = max(leftHeight, rightHeight);
+
+	h =maxHeight +1;
+	return h;
+}
+
+void BinaryTree::print_nodes_at_height(Node* root, int current_height, int target_height, bool on_path) {
+   if (root == NULL)
+        return;
+    if (on_path)
+        cout << root->data << " ";
+    if (current_height == target_height)
+        on_path = true;
+    print_nodes_at_height(root->left, current_height + 1, target_height, on_path);
+    print_nodes_at_height(root->right, current_height + 1, target_height, on_path);
+}
+
+
+void BinaryTree::print_nodes_highest_height(Node* root) {
+    if (root == NULL)
+        return;
+    int tree_height = height(root);
+    print_nodes_at_height(root, 1, tree_height,false);
+}
+
+
 Node* cloneBinaryTree(Node* root)
 {
 	if (root == nullptr)

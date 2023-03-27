@@ -1,0 +1,31 @@
+import firebase_admin
+from firebase_admin import credentials, storage
+# from flask import Flask, request
+import os
+os.environ['GOOGLE_CLOUD_DEBUG'] = 'true'
+
+sd = {
+  "type": "service_account",
+  "project_id": "testing-1ce90",
+  "private_key_id": "605f05f0aa3eb6bf8a1e56a6356f514987397c9f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCP9EGJOrTaAM9g\nPZm9ND8SAyJJimf8G1UjllBBe6ESXR7ub/T9HwUl8BMUJUozwTtN15EWS7hd35h8\nYkzdmiWOO1LpG4T713L1wJJG4DKmX5l/d5iOUdSlMYd9Kvoqo9g9KFaNUvVhMJNF\nuzq47Egt30wVQIq4ewMUwhxuBP5wip5VLghSlKTLXp7uU+22zoNW4u6VBxrXMU/Z\neOgYHGYUVqgecTVGMO6U+qq/1sq4XXTt1k4X8Dbv5HIT6ZulVxrByaGjIJtSRsFw\nqSaB2Hhi1wFSHutVyzCEWRqg2Sfxtktuljjq28B6iVfx4m52B6IwULVPpxn+iqV8\n6yvtpvbZAgMBAAECggEAFhBtHxiFccigAHNQpiRk6mDal4UETSrvUMYQRQkq9gKZ\n5Bf65/UiN99lPTg9+FLMwTCiR1WRy6mi2KXEfE7NJNDI83vJVUR/lVVP1lc0zDVo\n9JWjJ2U5f5xo1PGKaJC2ayFMqtqlS6FDYXPCG2fz5DwOkE9VM9N+9GaQLvjK+vq5\nT7xVp4gjUoIygMcf47PXC+q3gF/JILKdNOVcOiv/cRQOsvmAFZN/dx+h+NOHoZS7\nm0HOSkXrkhrAAMQiMKYksnUAYTTXv6pHglNqRrFo7f2An+2zqJlCOXbVGK0zqdQX\nsUE4LiGbzRzmSJvnLPhSN+MNsQnX2buMi7+rFvDXVQKBgQDD7qsqC2GLdhIDLUR+\nXNPaX3Q5SNU2yXTycgArBATAB0K5uuVVFxJDqTwz/PPDqgUvYGn8QD9I44KTo6G4\ne57whS2CGgRXEO+WFXnTy5PS/bk3IJyL47OSNY7cbqTWlJvmReT3/xqZ0/SXPZRt\n9pNEsvuRnIp2MtBFOraDbyLz8wKBgQC8FjDFJyt7iYFjYZoO3lTO2ApjJ/kSPwfu\nZxMtLMGlQlRWmPViKD/ZNjwuN+cRbPztczAvlpildy7euzRDyIkPLnki0WGP9Yvk\n37XexspnEryfxlxVcqEqyjbFR+KAVRTaABIwS6k/WmM5hGm8RuPVSm51BV1mncsW\nV/b2XJ85AwKBgDLBU+OrWRR4fIgIJPMa9uJd0cy5Gkp7+2iGsZZzDwvzlYxpZtkZ\nBekzIN5Sy47HL1qrfikTN5GZJg062TziATVLOpO2S6OGRpo5a/q6hMumYGFweD0g\nujbI2v4tR1Qy4QPQ3VSE6A4rQvQexqGJu3KTbum0hIXD+gHFCNyZYJOTAoGAIjiX\nXwelbbCzDfXwJcxl+cxs92WKd7toIgQ3BP0jroHG/oqN+vH/y/GGOZKKRC1kR3+x\nwLbRxylMKdI9zCdsaIq4F5GpApxWe6oIWSQqJ17NWvSoUBOvJy3rkTFnEJpqVM+2\nf3sErDYx34EsC8mKIoCMYFY9jDIhhUsz79ciUSkCgYBZatG9abm4RLUXzfmZuSMo\n+uWIofV2MqAPezJ2TOiefc3fOQF9CKKRDKyuW90jq9zRksMIojR9B/spcqUAqTLd\n9gKYtCYvUAC2wiaY8OvMGvg2tb2bpcZgEPyTXa5wLch71uFomRZ6EqkdG9qnwPM5\nOCgfxP5Y7QnnKjx6950haw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-ob8bf@testing-1ce90.iam.gserviceaccount.com",
+  "client_id": "110551796961594236940",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ob8bf%40testing-1ce90.iam.gserviceaccount.com"
+}
+
+# app = Flask(__name__)
+cred = credentials.Certificate(sd)
+firebase_admin.initialize_app(cred, {
+    'storageBucket': 'gs://testing-1ce90.appspot.com'
+})
+
+bucket = storage.bucket()
+file_path = 'test.txt'
+blob = bucket.blob('/test')
+
+blob.upload_from_filename(filename=file_path)
+

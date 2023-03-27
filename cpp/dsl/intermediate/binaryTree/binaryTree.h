@@ -36,7 +36,9 @@ public:
     void preOrderTraversal();
     void inOrderTraversal();
     void postOrderTraversal();
-
+    int height(Node*);
+    void print_nodes_at_height(Node* root, int current_height, int target_height, bool);
+    void print_nodes_highest_height(Node* root);
 };
 
 bool compareBinaryTree(Node*, Node*);
