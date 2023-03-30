@@ -1,5 +1,5 @@
-#ifndef BINARYTREE_H
-#define BINARYTREE_H
+#ifndef BINARYSEARCHTREE_H
+#define BINARYSEARCHTREE_H
 
 class Node
 {
@@ -16,44 +16,26 @@ public:
     Node* getLeft() const {return left;}
     Node* getRight() const {return right;}
 
-    friend class BinaryTree;
     friend class BinarySearchTree;
-    friend Node* cloneBinaryTree(Node*);
-    friend Node* mirrorBinaryTree(Node* root);
 };
 
-class BinaryTree
+class BinarySearchTree
 {
 private:
     Node* root;
 
 public:
-    BinaryTree(): root{nullptr} {}
+    BinarySearchTree(): root{nullptr} {}
 
     Node* getRoot() const {return root;}
     void setRoot(Node* newRoot) {root=newRoot;}  
 
     void insert(int);
+    bool search(int);
 
     void preOrderTraversal();
     void inOrderTraversal();
     void postOrderTraversal();
-
-    int height(Node*);
-    friend class BinarySearchTree;
 };
-
-
-class BinarySearchTree : public BinaryTree
-{
-public:
-    void insert(int);
-    bool search(int);
-    void remove(int);
-};
-
-
-bool compareBinaryTree(Node*, Node*);
-Node* cloneBinaryTree(Node*);
 
 #endif

@@ -52,14 +52,27 @@ void preOrderTraversalRecursive(Node* currentNode)
 		return;
 
 	cout << currentNode->getData() << " ";
-
 	preOrderTraversalRecursive(currentNode->getLeft());
 	preOrderTraversalRecursive(currentNode->getRight());
 }
 
-void preOrderTraversalIterative()
+void preOrderTraversalIterative(Node* root)
 {
-	cout << "preOrderTraversalIterative" << endl;
+	stack<Node*> stack;
+	Node* currentNode =root;
+	cout << "pre\n";
+	while(currentNode!=NULL || !stack.empty() )
+	{
+		while (currentNode != NULL)
+			stack.push(currentNode),
+			currentNode =currentNode->getLeft();
+
+		currentNode =stack.top();
+		cout << currentNode->getData() << " ";
+		stack.pop();
+
+		currentNode =currentNode->getRight();
+	}
 }
 
 void BinaryTree::preOrderTraversal()
@@ -70,7 +83,7 @@ void BinaryTree::preOrderTraversal()
 	if (choice==1)
 		preOrderTraversalRecursive(this->getRoot());
 	else 
-		preOrderTraversalIterative();
+		preOrderTraversalIterative(this->root);
 }
 
 void inOrderTraversalRecursive(Node* currentNode)
@@ -83,9 +96,23 @@ void inOrderTraversalRecursive(Node* currentNode)
 	inOrderTraversalRecursive(currentNode->getRight());
 }
 
-void inOrderTraversalIterative()
+void inOrderTraversalIterative(Node* root)
 {
-	cout << "inOrderTraversalIterative" << endl;
+	stack<Node*> stack;
+	Node* currentNode =root;
+
+	while(currentNode!=NULL || !stack.empty() )
+	{
+		while (currentNode != NULL)
+			stack.push(currentNode),
+			currentNode =currentNode->getLeft();
+
+		currentNode =stack.top();
+		stack.pop();
+		cout << currentNode->getData() << " ",
+
+		currentNode =currentNode->getRight();
+	}
 }
 
 void BinaryTree::inOrderTraversal()
@@ -96,7 +123,7 @@ void BinaryTree::inOrderTraversal()
 	if (choice==1)
 		inOrderTraversalRecursive(this->getRoot());
 	else 
-		inOrderTraversalIterative();
+		inOrderTraversalIterative(this->root);
 }
 
 void postOrderTraversalRecursive(Node* currentNode)
@@ -109,9 +136,23 @@ void postOrderTraversalRecursive(Node* currentNode)
 	cout << currentNode->getData() << " ";
 }
 
-void postOrderTraversalIterative()
+void postOrderTraversalIterative(Node* root)
 {
-	cout << "postOrderTraversalIterative" << endl;
+	stack<Node*> stack;
+	Node* currentNode =root;
+
+	while(currentNode!=NULL || !stack.empty() )
+	{
+		while (currentNode != NULL)
+			stack.push(currentNode),
+			currentNode =currentNode->getLeft();
+
+		currentNode =stack.top();
+		stack.pop();
+		cout << currentNode->getData() << " ",
+
+		currentNode =currentNode->getRight();
+	}
 }
 
 void BinaryTree::postOrderTraversal()
@@ -122,11 +163,13 @@ void BinaryTree::postOrderTraversal()
 	if (choice==1)
 		postOrderTraversalRecursive(this->getRoot());
 	else 
-		postOrderTraversalIterative();
+		postOrderTraversalIterative(this->root);
 }
 
 // ------------------------------------------------Traversal Ends---------------------------------------------------------
 
+
+// ------------------------------------------------Miscellenous Function--------------------------------------------
 
 int BinaryTree::height(Node* root)
 {
@@ -142,30 +185,10 @@ int BinaryTree::height(Node* root)
 	return h;
 }
 
-void BinaryTree::print_nodes_at_height(Node* root, int current_height, int target_height, bool on_path) {
-   if (root == NULL)
-        return;
-    if (on_path)
-        cout << root->data << " ";
-    if (current_height == target_height)
-        on_path = true;
-    print_nodes_at_height(root->left, current_height + 1, target_height, on_path);
-    print_nodes_at_height(root->right, current_height + 1, target_height, on_path);
-}
-
-
-void BinaryTree::print_nodes_highest_height(Node* root) {
-    if (root == NULL)
-        return;
-    int tree_height = height(root);
-    print_nodes_at_height(root, 1, tree_height,false);
-}
-
-
 Node* cloneBinaryTree(Node* root)
 {
-	if (root == nullptr)
-		return nullptr;
+	if (root == NULL)
+		return NULL;
 
 	Node* newNode = new Node(root->data);
 	newNode->left = cloneBinaryTree(root->left);
@@ -176,8 +199,8 @@ Node* cloneBinaryTree(Node* root)
 
 Node* mirrorBinaryTree(Node* root)
 {
-	if (root == nullptr)
-		return nullptr;
+	if (root == NULL)
+		return NULL;
 
 	Node* newNode = new Node(root->data);
 	newNode->right = mirrorBinaryTree(root->left);
@@ -203,4 +226,147 @@ bool compareBinaryTree(Node* root1, Node* root2)
 		return false;
 
 	return true;
+}
+
+// ------------------------------------------Miscellenous Function Ends--------------------------------------------
+
+
+// ----------------------------------------------------BST-----------------------------------------------------------
+
+
+void BinarySearchTree::insert(int value)
+{
+	Node* newNode =new Node(value);
+
+	if (root==NULL)
+	{
+		root =newNode;
+		return;
+	}
+
+	Node* currentNode =root;
+	while (currentNode!=NULL)
+	{
+		if (currentNode->data > value)
+		{
+			if (currentNode->left == NULL)
+			{
+				currentNode->left =newNode;
+				return;
+			}
+			currentNode = currentNode->left;
+		}
+		else 
+		{
+			if (currentNode->right == NULL)
+			{
+				currentNode->right = newNode;
+				return;
+			}
+			currentNode = currentNode->right;
+		}
+	}	
+}
+
+
+bool BinarySearchTree::search(int value)
+{
+	Node* currentNode=root;
+
+	while (true)
+	{
+		if (currentNode == NULL)
+			return false;
+
+		if (currentNode->data == value)
+			return true;
+
+		if (value < currentNode->data)
+			currentNode = currentNode->left;
+		else 
+			currentNode = currentNode->right;
+	}	
+}
+
+Node* getParentNode(Node* root, int value)
+{
+	Node* currentNode =root;
+	Node* parentNode =NULL;
+	while (currentNode!=NULL && currentNode->getData() != value)
+	{
+		parentNode =currentNode;
+		if (value < currentNode->getData())
+			currentNode =currentNode->getLeft();
+		else
+			currentNode =currentNode->getRight();
+	}
+
+	if (parentNode==NULL && currentNode->getData() == value)
+		return currentNode;
+
+	if (currentNode!=NULL && currentNode->getData() == value)
+		return parentNode;
+
+	return NULL;
+}
+
+void BinarySearchTree::remove(int value)
+{
+	Node* currentNode =this->root;
+	
+	Node* parentNode =getParentNode(currentNode, value);
+	if (!parentNode)
+	{
+		cout << "Not Present\n";
+		return;
+	}
+
+	currentNode =parentNode;
+	if (parentNode->left != NULL && parentNode->left->data == value)
+		currentNode =parentNode->left;
+	else if (parentNode->right != NULL && currentNode->right->data == value)
+		currentNode =parentNode->right;
+
+	// case 1: when both the left and right nodes are not present
+	if (!currentNode->left && !currentNode->right)
+	{
+		if (parentNode->left == currentNode)
+			parentNode->left =NULL;
+		else 
+			parentNode->right =NULL;
+
+		cout << currentNode->data << " is deleted\n";
+		delete currentNode;
+		return;
+	}
+
+	// case 2: when left or right node is present 
+	// part1 : when left node is present
+	if (currentNode->left!=NULL && currentNode->right==NULL)
+	{
+		if (parentNode->left == currentNode)
+			parentNode->left =currentNode->left;
+		else 
+			parentNode->right =currentNode->left;
+
+		cout << currentNode->data << "is deleted\n";
+		delete currentNode;
+		return;
+	}
+
+	// part2 : when right node is present
+	if (currentNode->left==NULL && currentNode->right!=NULL)
+	{
+		if (parentNode->left == currentNode)
+			parentNode->left =currentNode->right;
+		else 
+			parentNode->right =currentNode->right;
+
+		cout << currentNode->data << "is deleted\n";
+		delete currentNode;
+		return;
+	}
+
+	// case 3: when both left and right node are present
+
 }
