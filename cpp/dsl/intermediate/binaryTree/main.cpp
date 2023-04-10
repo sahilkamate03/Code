@@ -13,13 +13,13 @@ void menuBST(BinarySearchTree& bt)
 	Node* mirrorBinaryTreeNode;
 	BinaryTree mirror;
 
-	int choice; 
+	int choice, n; 
 
 	while (true)
 	{
 		cout << "\nBinary Search Tree\n";	
 		cout << "\n1. Insert\n2. Pre-Order\n3. In-Order\n4. Post-Order\n";
-		cout << "5. Height\n6. Clone\n7. Mirror\n8. Remove\n9. Exit\n";
+		cout << "5. Height\n6. Clone\n7. Mirror\n8. Remove\n9.Multiple Insert\n10. Exit\n";
 		cout << "\nEnter Choice: ";
 		cin>>choice;
 
@@ -45,6 +45,7 @@ void menuBST(BinarySearchTree& bt)
 			cloneBinaryTreeNode =cloneBinaryTree(bt.getRoot());
 			clone.setRoot(cloneBinaryTreeNode);
 			clone.preOrderTraversal();
+			bt.setRoot(NULL);
 			break;
 		case 7:
 			mirrorBinaryTreeNode =mirrorBinaryTree(bt.getRoot());
@@ -54,6 +55,12 @@ void menuBST(BinarySearchTree& bt)
 		case 8:
 			cout << "\nEnter Value: ";cin >> value;
 			bt.remove(value);
+			break;
+		case 9:
+			cout << "Enter no of elements: "; cin>>n;
+			cout << "Elements: ";
+			for (int i=0; i<n; i++)
+				cin >> value, bt.insert(value);
 			break;
 		default:
 			return;
@@ -95,7 +102,7 @@ void menuBT(BinaryTree& bt)
 			bt.inOrderTraversal();
 			break;
 		case 4:
-			bt.postOrderTraversal();
+			bt.postOrderTraversal();	
 			break;
 		case 5:
 			bt.height(bt.getRoot());
@@ -104,12 +111,14 @@ void menuBT(BinaryTree& bt)
 			cloneBinaryTreeNode =cloneBinaryTree(bt.getRoot());
 			clone.setRoot(cloneBinaryTreeNode);
 			clone.preOrderTraversal();
+			bt.setRoot(NULL);
 			break;
 		case 7:
 			mirrorBinaryTreeNode =mirrorBinaryTree(bt.getRoot());
 			mirror.setRoot(mirrorBinaryTreeNode);
 			mirror.preOrderTraversal();
 			break;
+		
 		default:
 			return;
 		}

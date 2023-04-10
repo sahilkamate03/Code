@@ -60,19 +60,18 @@ void preOrderTraversalIterative(Node* root)
 {
 	stack<Node*> stack;
 	Node* currentNode =root;
-	cout << "pre\n";
-	while(currentNode!=NULL || !stack.empty() )
-	{
-		while (currentNode != NULL)
-			stack.push(currentNode),
-			currentNode =currentNode->getLeft();
-
-		currentNode =stack.top();
-		cout << currentNode->getData() << " ";
-		stack.pop();
-
-		currentNode =currentNode->getRight();
-	}
+    stack.push(currentNode);
+    
+    while (stack.empty() == false) {
+    	currentNode =stack.top();
+        cout << currentNode->getData() << " ";
+        stack.pop();
+ 
+        if (currentNode->getRight())
+            stack.push(currentNode->getRight());
+        if (currentNode->getLeft())
+            stack.push(currentNode->getLeft());
+    }
 }
 
 void BinaryTree::preOrderTraversal()
@@ -145,11 +144,11 @@ void postOrderTraversalIterative(Node* root)
 	{
 		while (currentNode != NULL)
 			stack.push(currentNode),
-			currentNode =currentNode->getLeft();
+			currentNode =currentNode->getLeft(),
+			cout << currentNode->getData() << " ";
 
 		currentNode =stack.top();
 		stack.pop();
-		cout << currentNode->getData() << " ",
 
 		currentNode =currentNode->getRight();
 	}
@@ -193,7 +192,7 @@ Node* cloneBinaryTree(Node* root)
 	Node* newNode = new Node(root->data);
 	newNode->left = cloneBinaryTree(root->left);
 	newNode->right = cloneBinaryTree(root->right);
-
+	delete root;
 	return newNode;
 }
 
@@ -205,7 +204,6 @@ Node* mirrorBinaryTree(Node* root)
 	Node* newNode = new Node(root->data);
 	newNode->right = mirrorBinaryTree(root->left);
 	newNode->left = mirrorBinaryTree(root->right);
-
 	return newNode;
 }
 
