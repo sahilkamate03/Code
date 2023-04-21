@@ -53,7 +53,8 @@ void HuffmanTree::printCode(string ch)
 			break;
 		}
 	}
-	cout << ch << " " << huffmanCode << endl;
+
+	cout << ch << " " << huffmanCode << endl ;
 	
 }
 
