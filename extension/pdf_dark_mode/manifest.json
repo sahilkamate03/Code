@@ -1,0 +1,27 @@
+{
+  "description": "Dark Mode for PDF",
+  "manifest_version": 2,
+  "name": "Dark PDF",
+  "version": "1.0",
+  "homepage_url": "https://example.com/your-extension-homepage",
+  "icons": {
+    "48": "icons/icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "theme",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+  {
+    "matches": [
+      "*://*/*.pdf",        
+      "*://*/*/*.pdf",  
+      "*://*/*.pdf?*",     
+      "*://*/*/*.pdf?*"    
+  ],
+    "js": ["pdf.js"]
+  }
+  ]
+}
