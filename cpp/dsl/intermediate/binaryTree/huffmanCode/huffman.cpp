@@ -53,8 +53,8 @@ void HuffmanTree::printCode(string ch)
 			break;
 		}
 	}
-
-	cout << ch << " " << huffmanCode << endl ;
+	cout << huffmanCode;
+	// cout << ch << " " << huffmanCode << endl ;
 	
 }
 
@@ -130,6 +130,9 @@ void HuffmanTree::Huffman()
 		freq[i] =freqCount;
 	}
 
+	// for (i = 0; i < dataString.size(); i++) {
+    //     freq[dataString[i]]++;
+    // }
 	for (int i=0; i<dataString.size(); i++)
 	{
 		string _data =data[i]; int _freq =freq[i];

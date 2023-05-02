@@ -33,6 +33,13 @@ _start:
 ; 	write hello, hello_len
 	read user_input, 17
 	call ascii_hex64
+	mov [hex1], rbx
+
+	read user_input, 17
+	call ascii_hex64
+	mov [hex2], rbx
+
+	; write [hex2], 16
 
 exit:
 	mov rax, 60
@@ -69,4 +76,8 @@ section .bss
 	choice resb 2
 	user_input resb 17
 
+	hex1 resq 1
+	hex2 resq 1
+
+	result resq 1
 
