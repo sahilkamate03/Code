@@ -3,50 +3,50 @@
 using namespace std;
 
 void BinaryTree::insert(int data)
-{	
+{
 	cout << "\nInserting: " << data << "\n";
 
-	Node* newNode = new Node(data);
+	Node *newNode = new Node(data);
 
-	if  (root==NULL)
+	if (root == NULL)
 	{
-	 	root =newNode;
-	 	cout << endl;
+		root = newNode;
+		cout << endl;
 		return;
 	}
 
-	Node* current= root;
+	Node *current = root;
 	while (true)
 	{
-	   	int choice= -1; 
+		int choice = -1;
 		cout << "Press... \n0:left insertion, 1:right insertion of " << current->data << endl;
-		cin>>choice;
+		cin >> choice;
 		cout << "\n";
 
-		if (choice==0)
+		if (choice == 0)
 		{
 			if (!current->left)
 			{
-				current->left =newNode;
+				current->left = newNode;
 				return;
 			}
-			current =current->left;
+			current = current->left;
 		}
-		else if (choice==1)
+		else if (choice == 1)
 		{
 			if (!current->right)
 			{
-				current->right =newNode;
-				return;	
+				current->right = newNode;
+				return;
 			}
-			current =current->right;
+			current = current->right;
 		}
 	}
 }
 
 // ------------------------------------------------Traversal Starts---------------------------------------------------------
 
-void preOrderTraversalRecursive(Node* currentNode)
+void preOrderTraversalRecursive(Node *currentNode)
 {
 	if (currentNode == NULL)
 		return;
@@ -56,38 +56,40 @@ void preOrderTraversalRecursive(Node* currentNode)
 	preOrderTraversalRecursive(currentNode->getRight());
 }
 
-void preOrderTraversalIterative(Node* root)
+void preOrderTraversalIterative(Node *root)
 {
-	stack<Node*> stack;
-	Node* currentNode =root;
-    stack.push(currentNode);
-    
-    while (stack.empty() == false) {
-    	currentNode =stack.top();
-        cout << currentNode->getData() << " ";
-        stack.pop();
- 
-        if (currentNode->getRight())
-            stack.push(currentNode->getRight());
-        if (currentNode->getLeft())
-            stack.push(currentNode->getLeft());
-    }
+	stack<Node *> stack;
+	Node *currentNode = root;
+	stack.push(currentNode);
+
+	while (stack.empty() == false)
+	{
+		currentNode = stack.top();
+		cout << currentNode->getData() << " ";
+		stack.pop();
+
+		if (currentNode->getRight())
+			stack.push(currentNode->getRight());
+		if (currentNode->getLeft())
+			stack.push(currentNode->getLeft());
+	}
 }
 
 void BinaryTree::preOrderTraversal()
 {
 	cout << "\n1. Recursive 2. Iterative: ";
-	int choice; cin>>choice;
+	int choice;
+	cin >> choice;
 
-	if (choice==1)
+	if (choice == 1)
 		preOrderTraversalRecursive(this->getRoot());
-	else 
+	else
 		preOrderTraversalIterative(this->root);
 }
 
-void inOrderTraversalRecursive(Node* currentNode)
+void inOrderTraversalRecursive(Node *currentNode)
 {
-	if(currentNode == NULL)
+	if (currentNode == NULL)
 		return;
 
 	inOrderTraversalRecursive(currentNode->getLeft());
@@ -95,39 +97,40 @@ void inOrderTraversalRecursive(Node* currentNode)
 	inOrderTraversalRecursive(currentNode->getRight());
 }
 
-void inOrderTraversalIterative(Node* root)
+void inOrderTraversalIterative(Node *root)
 {
-	stack<Node*> stack;
-	Node* currentNode =root;
+	stack<Node *> stack;
+	Node *currentNode = root;
 
-	while(currentNode!=NULL || !stack.empty() )
+	while (currentNode != NULL || !stack.empty())
 	{
 		while (currentNode != NULL)
 			stack.push(currentNode),
-			currentNode =currentNode->getLeft();
+				currentNode = currentNode->getLeft();
 
-		currentNode =stack.top();
+		currentNode = stack.top();
 		stack.pop();
 		cout << currentNode->getData() << " ",
 
-		currentNode =currentNode->getRight();
+			currentNode = currentNode->getRight();
 	}
 }
 
 void BinaryTree::inOrderTraversal()
 {
 	cout << "\n1. Recursive 2. Iterative: ";
-	int choice; cin>>choice;
+	int choice;
+	cin >> choice;
 
-	if (choice==1)
+	if (choice == 1)
 		inOrderTraversalRecursive(this->getRoot());
-	else 
+	else
 		inOrderTraversalIterative(this->root);
 }
 
-void postOrderTraversalRecursive(Node* currentNode)
+void postOrderTraversalRecursive(Node *currentNode)
 {
-	if (currentNode==NULL)
+	if (currentNode == NULL)
 		return;
 
 	postOrderTraversalRecursive(currentNode->getLeft());
@@ -135,84 +138,84 @@ void postOrderTraversalRecursive(Node* currentNode)
 	cout << currentNode->getData() << " ";
 }
 
-void postOrderTraversalIterative(Node* root)
+void postOrderTraversalIterative(Node *root)
 {
-	stack<Node*> stack;
-	Node* currentNode =root;
+	stack<Node *> stack;
+	Node *currentNode = root;
 
-	while(currentNode!=NULL || !stack.empty() )
+	while (currentNode != NULL || !stack.empty())
 	{
 		while (currentNode != NULL)
 			stack.push(currentNode),
-			currentNode =currentNode->getLeft(),
-			cout << currentNode->getData() << " ";
+				currentNode = currentNode->getLeft(),
+				cout << currentNode->getData() << " ";
 
-		currentNode =stack.top();
+		currentNode = stack.top();
 		stack.pop();
 
-		currentNode =currentNode->getRight();
+		currentNode = currentNode->getRight();
 	}
 }
 
 void BinaryTree::postOrderTraversal()
 {
 	cout << "\n1. Recursive 2. Iterative: ";
-	int choice; cin>>choice;
+	int choice;
+	cin >> choice;
 
-	if (choice==1)
+	if (choice == 1)
 		postOrderTraversalRecursive(this->getRoot());
-	else 
+	else
 		postOrderTraversalIterative(this->root);
 }
 
 // ------------------------------------------------Traversal Ends---------------------------------------------------------
 
-
 // ------------------------------------------------Miscellenous Function--------------------------------------------
 
-int BinaryTree::height(Node* root)
+int BinaryTree::height(Node *root)
 {
-	int h=0;
-	if (root==NULL)
+	int h = 0;
+	if (root == NULL)
 		return 0;
 
-	int leftHeight =height(root->left);
-	int rightHeight =height(root->right);
+	int leftHeight = height(root->left);
+	int rightHeight = height(root->right);
 	int maxHeight = max(leftHeight, rightHeight);
 
-	h =maxHeight +1;
+	h = maxHeight + 1;
 	return h;
 }
 
-Node* cloneBinaryTree(Node* root)
+Node *cloneBinaryTree(Node *root)
 {
 	if (root == NULL)
 		return NULL;
 
-	Node* newNode = new Node(root->data);
+	Node *newNode = new Node(root->data);
 	newNode->left = cloneBinaryTree(root->left);
 	newNode->right = cloneBinaryTree(root->right);
 	delete root;
 	return newNode;
 }
 
-Node* mirrorBinaryTree(Node* root)
+Node *mirrorBinaryTree(Node *root)
 {
 	if (root == NULL)
 		return NULL;
 
-	Node* newNode = new Node(root->data);
+	Node *newNode = new Node(root->data);
 	newNode->right = mirrorBinaryTree(root->left);
 	newNode->left = mirrorBinaryTree(root->right);
 	return newNode;
 }
 
-bool compareBinaryTree(Node* root1, Node* root2)
+bool compareBinaryTree(Node *root1, Node *root2)
 {
-	if (root1 == NULL && root2 == NULL)	
+	if (root1 == NULL && root2 == NULL)
 		return true;
 
-	else if (root1 == NULL || root2 == NULL) 
+	else if (root1 == NULL || root2 == NULL)
 		return false;
 
 	if (root1->getData() != root2->getData())
@@ -228,33 +231,31 @@ bool compareBinaryTree(Node* root1, Node* root2)
 
 // ------------------------------------------Miscellenous Function Ends--------------------------------------------
 
-
 // ----------------------------------------------------BST-----------------------------------------------------------
-
 
 void BinarySearchTree::insert(int value)
 {
-	Node* newNode =new Node(value);
+	Node *newNode = new Node(value);
 
-	if (root==NULL)
+	if (root == NULL)
 	{
-		root =newNode;
+		root = newNode;
 		return;
 	}
 
-	Node* currentNode =root;
-	while (currentNode!=NULL)
+	Node *currentNode = root;
+	while (currentNode != NULL)
 	{
 		if (currentNode->data > value)
 		{
 			if (currentNode->left == NULL)
 			{
-				currentNode->left =newNode;
+				currentNode->left = newNode;
 				return;
 			}
 			currentNode = currentNode->left;
 		}
-		else 
+		else
 		{
 			if (currentNode->right == NULL)
 			{
@@ -263,13 +264,12 @@ void BinarySearchTree::insert(int value)
 			}
 			currentNode = currentNode->right;
 		}
-	}	
+	}
 }
-
 
 bool BinarySearchTree::search(int value)
 {
-	Node* currentNode=root;
+	Node *currentNode = root;
 
 	while (true)
 	{
@@ -281,28 +281,28 @@ bool BinarySearchTree::search(int value)
 
 		if (value < currentNode->data)
 			currentNode = currentNode->left;
-		else 
+		else
 			currentNode = currentNode->right;
-	}	
+	}
 }
 
-Node* getParentNode(Node* root, int value)
+Node *getParentNode(Node *root, int value)
 {
-	Node* currentNode =root;
-	Node* parentNode =NULL;
-	while (currentNode!=NULL && currentNode->getData() != value)
+	Node *currentNode = root;
+	Node *parentNode = NULL;
+	while (currentNode != NULL && currentNode->getData() != value)
 	{
-		parentNode =currentNode;
+		parentNode = currentNode;
 		if (value < currentNode->getData())
-			currentNode =currentNode->getLeft();
+			currentNode = currentNode->getLeft();
 		else
-			currentNode =currentNode->getRight();
+			currentNode = currentNode->getRight();
 	}
 
-	if (parentNode==NULL && currentNode->getData() == value)
+	if (parentNode == NULL && currentNode->getData() == value)
 		return currentNode;
 
-	if (currentNode!=NULL && currentNode->getData() == value)
+	if (currentNode != NULL && currentNode->getData() == value)
 		return parentNode;
 
 	return NULL;
@@ -310,42 +310,42 @@ Node* getParentNode(Node* root, int value)
 
 void BinarySearchTree::remove(int value)
 {
-	Node* currentNode =this->root;
-	
-	Node* parentNode =getParentNode(currentNode, value);
+	Node *currentNode = this->root;
+
+	Node *parentNode = getParentNode(currentNode, value);
 	if (!parentNode)
 	{
 		cout << "Not Present\n";
 		return;
 	}
 
-	currentNode =parentNode;
+	currentNode = parentNode;
 	if (parentNode->left != NULL && parentNode->left->data == value)
-		currentNode =parentNode->left;
+		currentNode = parentNode->left;
 	else if (parentNode->right != NULL && currentNode->right->data == value)
-		currentNode =parentNode->right;
+		currentNode = parentNode->right;
 
 	// case 1: when both the left and right nodes are not present
 	if (!currentNode->left && !currentNode->right)
 	{
 		if (parentNode->left == currentNode)
-			parentNode->left =NULL;
-		else 
-			parentNode->right =NULL;
+			parentNode->left = NULL;
+		else
+			parentNode->right = NULL;
 
 		cout << currentNode->data << " is deleted\n";
 		delete currentNode;
 		return;
 	}
 
-	// case 2: when left or right node is present 
+	// case 2: when left or right node is present
 	// part1 : when left node is present
-	if (currentNode->left!=NULL && currentNode->right==NULL)
+	if (currentNode->left != NULL && currentNode->right == NULL)
 	{
 		if (parentNode->left == currentNode)
-			parentNode->left =currentNode->left;
-		else 
-			parentNode->right =currentNode->left;
+			parentNode->left = currentNode->left;
+		else
+			parentNode->right = currentNode->left;
 
 		cout << currentNode->data << "is deleted\n";
 		delete currentNode;
@@ -353,12 +353,12 @@ void BinarySearchTree::remove(int value)
 	}
 
 	// part2 : when right node is present
-	if (currentNode->left==NULL && currentNode->right!=NULL)
+	if (currentNode->left == NULL && currentNode->right != NULL)
 	{
 		if (parentNode->left == currentNode)
-			parentNode->left =currentNode->right;
-		else 
-			parentNode->right =currentNode->right;
+			parentNode->left = currentNode->right;
+		else
+			parentNode->right = currentNode->right;
 
 		cout << currentNode->data << " is deleted\n";
 		delete currentNode;
@@ -366,23 +366,23 @@ void BinarySearchTree::remove(int value)
 	}
 
 	// case 3: when both left and right node are present
-	Node* replacementNode =currentNode->right;
-	Node* parentReplacementNode;
+	Node *replacementNode = currentNode->right;
+	Node *parentReplacementNode;
 	while (replacementNode->left != NULL)
-		parentReplacementNode =replacementNode,
-		replacementNode =replacementNode->left;
+		parentReplacementNode = replacementNode,
+		replacementNode = replacementNode->left;
 
 	cout << currentNode->data << " is deleted\n";
-	currentNode->data =replacementNode->data;
+	currentNode->data = replacementNode->data;
 	if (replacementNode->right == NULL)
 	{
 		delete replacementNode;
-		parentReplacementNode->left =NULL;
+		parentReplacementNode->left = NULL;
 		return;
 	}
 
-	replacementNode->data =replacementNode->right->data;
-	replacementNode->right =NULL;
+	replacementNode->data = replacementNode->right->data;
+	replacementNode->right = NULL;
 	delete replacementNode->right;
 
 	return;
