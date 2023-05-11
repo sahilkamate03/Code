@@ -70,18 +70,16 @@ void Graph::bfs()
 	while(!q.empty())
 	{
 		int temp =q.front();
-		// if (!visitedNodes[temp])
-			// cout << temp << " ";
+		if (!visitedNodes[temp])
+			cout << temp << " ";
 		visitedNodes[temp] =true;
 		for (int i=0; i<adjList[temp].size(); i++)
 		{
 			if (visitedNodes[adjList[temp][i]]==true)
 				continue;
-			adjList[temp][i] =true;
 			q.push(adjList[temp][i]);
 		}
 		q.pop();
-		cout << temp << " ";
 	}
 	cout << endl;
 }
