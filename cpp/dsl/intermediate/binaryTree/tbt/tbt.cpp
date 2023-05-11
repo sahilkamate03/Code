@@ -17,8 +17,9 @@ public:
 	Node *getRight() const { return right; }
 	int getData() const { return data; }
 
-	Node() : data{-1}, left{nullptr}, right{nullptr}, flag_l{true}, flag_r{true} {}
-	Node(int _data) : data{_data}, left{nullptr}, right{nullptr}, flag_l{true}, flag_r{true} {}
+	Node() : data{-1}, left{nullptr}, right{nullptr}, flag_l{0}, flag_r{0} {}
+	Node(int _data) : data{_data}, left{nullptr}, right{nullptr}, flag_l{1}, flag_r{1} {}
+	Node(Node *dn, Node *root) : data{5}, left{root}, flag_l{0}, flag_r{1} { right = dn; }
 
 	friend class ThreadedBinaryTree;
 };
@@ -34,35 +35,28 @@ public:
 	// ThreadedBinaryTree(): {}
 	ThreadedBinaryTree()
 	{
-		Node *dn = new Node();
-		dn->right = dn;
-		root = nullptr;
-		dummyNode = dn;
+		Node *rootNode = new Node;
+		Node *dm = new Node(dm, rootNode);
+
+		root = rootNode;
+		dummyNode = dm;
 	}
 
-	Node *getParentNode(int);
-	Node *getRoot() { return root; }
-	Node *getDummyNode() const { return dummyNode; }
-
-	//TBT Fxn
 	void inOrder();
+	void inOrderMaker(Node *);
+	void inOrderRecursive(Node *);
 	void insert(int);
 	void remove(int);
-
-	//BST Fxn
-	void bst_to_tbt();
-	void bstInsert(int);
-	void bstInorder();
+	Node *getParentNode(int);
+	Node *getRoot() const { return root; }
+	Node *getDummyNode() const { return dummyNode; }
 };
 
 void ThreadedBinaryTree::inOrder()
 {
 	Node *currentNode = root;
 	if (currentNode == nullptr)
-	{
-		cout << "No element present." << endl;
 		return;
-	}
 	while (currentNode->flag_l == 0)
 		currentNode = currentNode->left;
 
@@ -82,43 +76,24 @@ void ThreadedBinaryTree::inOrder()
 	}
 }
 
-void ThreadedBinaryTree::bst_to_tbt()
+void ThreadedBinaryTree::inOrderRecursive(Node *currentNode)
 {
-	if (!inorderVector.size())
-	{
-		cout << "BST not initialized." << endl;
+	if (currentNode == NULL)
 		return;
-	}
 
-	for (int i = 1; i < inorderVector.size() - 1; i++)
-	{
-		Node *currentNode = inorderVector[i];
-		if (currentNode->left)
-			currentNode->flag_l = 0;
-		else
-			currentNode->left = inorderVector[i - 1];
+	inOrderRecursive(currentNode->getLeft());
+	cout << currentNode->getData() << " ";
+	inOrderRecursive(currentNode->getRight());
+}
 
-		if (currentNode->right)
-			currentNode->flag_r = 0;
-		else
-			currentNode->right = inorderVector[i + 1];
-	}
+void ThreadedBinaryTree::inOrderMaker(Node *currentNode)
+{
+	if (currentNode == NULL)
+		return;
 
-	inorderVector[0]->left = dummyNode;
-	inorderVector[inorderVector.size() - 1]->right = dummyNode;
-
-	if (inorderVector.size() > 1)
-	{
-		if (inorderVector[0]->right)
-			inorderVector[0]->flag_r = 0;
-		else
-			inorderVector[0]->right = inorderVector[1];
-
-		if (inorderVector[inorderVector.size() - 1]->left)
-			inorderVector[inorderVector.size() - 1]->flag_l = 0;
-		else
-			inorderVector[inorderVector.size() - 1]->left = inorderVector[inorderVector.size() - 2];
-	}
+	inOrderMaker(currentNode->getLeft());
+	inorderVector.push_back(currentNode);
+	inOrderMaker(currentNode->getRight());
 }
 
 void ThreadedBinaryTree::insert(int value)
@@ -126,13 +101,13 @@ void ThreadedBinaryTree::insert(int value)
 	Node *parentNode = dummyNode;
 	Node *currentNode = root;
 
-	if (currentNode == nullptr)
+	if (currentNode->data == -1)
 	{
-		currentNode = new Node(value);
+		currentNode->data = value;
 		currentNode->left = parentNode;
 		currentNode->right = parentNode;
-		dummyNode->left = currentNode;
-		root = currentNode;
+		currentNode->flag_l = 1;
+		currentNode->flag_r = 1;
 		return;
 	}
 
@@ -146,7 +121,10 @@ void ThreadedBinaryTree::insert(int value)
 			if (currentNode->flag_l)
 			{
 				newNode->left = currentNode->left;
+
 				currentNode->left = newNode;
+				currentNode->flag_l = 0;
+
 				newNode->right = currentNode;
 				return;
 			}
@@ -158,65 +136,14 @@ void ThreadedBinaryTree::insert(int value)
 			if (currentNode->flag_r)
 			{
 				newNode->right = currentNode->right;
+
 				currentNode->right = newNode;
+				currentNode->flag_r = 0;
+
 				newNode->left = currentNode;
 				return;
 			}
-			currentNode = currentNode->right;
-		}
-	}
-}
 
-void ThreadedBinaryTree::bstInorder()
-{
-	inorderVector.clear();
-	stack<Node *> stack;
-	Node *currentNode = root;
-
-	while (currentNode != NULL || !stack.empty())
-	{
-		while (currentNode != NULL)
-			stack.push(currentNode),
-				currentNode = currentNode->getLeft();
-
-		currentNode = stack.top();
-		stack.pop();
-		cout << currentNode->getData() << " ",
-			inorderVector.push_back(currentNode);
-
-		currentNode = currentNode->getRight();
-	}
-}
-
-void ThreadedBinaryTree::bstInsert(int value)
-{
-	Node *newNode = new Node(value);
-
-	if (root == NULL)
-	{
-		root = newNode;
-		return;
-	}
-
-	Node *currentNode = root;
-	while (currentNode != NULL)
-	{
-		if (currentNode->data > value)
-		{
-			if (currentNode->left == NULL)
-			{
-				currentNode->left = newNode;
-				return;
-			}
-			currentNode = currentNode->left;
-		}
-		else
-		{
-			if (currentNode->right == NULL)
-			{
-				currentNode->right = newNode;
-				return;
-			}
 			currentNode = currentNode->right;
 		}
 	}
@@ -225,7 +152,7 @@ void ThreadedBinaryTree::bstInsert(int value)
 Node *ThreadedBinaryTree::getParentNode(int value)
 {
 	Node *currentNode = root;
-	Node *parentNode = nullptr;
+	Node *parentNode = NULL;
 
 	while (currentNode != dummyNode && currentNode->getData() != value)
 	{
@@ -236,18 +163,17 @@ Node *ThreadedBinaryTree::getParentNode(int value)
 			currentNode = currentNode->getRight();
 	}
 
-	if (parentNode == nullptr && currentNode->getData() == value)
+	if (parentNode == NULL && currentNode->getData() == value)
 		return currentNode;
 
-	if (currentNode != nullptr && currentNode->getData() == value)
+	if (currentNode != NULL && currentNode->getData() == value)
 		return parentNode;
 
-	return nullptr;
+	return NULL;
 }
 
 void ThreadedBinaryTree::remove(int value)
 {
-	bool isRoot = false;
 	Node *currentNode = root;
 	Node *parentNode = getParentNode(value);
 
@@ -257,15 +183,12 @@ void ThreadedBinaryTree::remove(int value)
 		return;
 	}
 
-	if (currentNode->data == value)
-		isRoot = true;
-
 	currentNode = parentNode;
 
-	if (parentNode->left != nullptr && parentNode->left->data == value)
+	if (parentNode->left != NULL && parentNode->left->data == value)
 		currentNode = parentNode->left;
 
-	else if (parentNode->right != nullptr && currentNode->right->data == value)
+	else if (parentNode->right != NULL && currentNode->right->data == value)
 		currentNode = parentNode->right;
 
 	// case 1: when both the left and right nodes are not present
@@ -281,40 +204,28 @@ void ThreadedBinaryTree::remove(int value)
 
 		cout << currentNode->data << " is deleted\n";
 		delete currentNode;
-		if (isRoot)
-			root = nullptr;
 		return;
 	}
 
 	// case 2: when left or right node is present
 	// part1 : when left node is present
-	if (currentNode->left != nullptr && currentNode->flag_r)
+	if (currentNode->left != NULL && currentNode->right == parentNode)
 	{
 		parentNode->left = currentNode->left;
 		parentNode->flag_l = true;
 		currentNode->left->right = currentNode->right;
 		cout << currentNode->data << "is deleted\n";
-		if (isRoot)
-		{
-			dummyNode->left = currentNode->left;
-			root = currentNode->left;
-		}
 		delete currentNode;
 		return;
 	}
 
 	// part2 : when right node is present
-	if (currentNode->flag_l && currentNode->right != nullptr)
+	if (currentNode->left == parentNode && currentNode->right != NULL)
 	{
 		parentNode->right = currentNode->right;
 		parentNode->flag_r = true;
 		currentNode->right->left = currentNode->left;
 		cout << currentNode->data << " is deleted\n";
-		if (isRoot)
-		{
-			dummyNode->right = currentNode->right;
-			root = currentNode->right;
-		}
 		delete currentNode;
 		return;
 	}
@@ -354,10 +265,12 @@ void ThreadedBinaryTree::remove(int value)
 int main()
 {
 	ThreadedBinaryTree tbt;
-	tbt.bstInsert(10);
-	tbt.bstInsert(9);
-	tbt.bstInsert(11);
-	tbt.bstInorder();
-	tbt.bst_to_tbt();
+	tbt.insert(10);
+	tbt.insert(12);
+	tbt.insert(11);
+	tbt.insert(14);
+	tbt.insert(15);
+	tbt.inOrder();
+	tbt.remove(10);
 	tbt.inOrder();
 }
