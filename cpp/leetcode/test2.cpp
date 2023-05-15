@@ -1,21 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int m=matrix.size();
+        int n=matrix[0].size();
+
+        int left =0;
+        int right =(m*n)-1;
+
+        while(left<=right)
+        {
+            int mid = left + (right - left) / 2;
+
+            if (matrix[mid/n][mid%n]==target)
+                return true;
+
+            if (matrix[mid/n][mid%]n < target)
+                left =mid +1;
+            
+            else 
+                right =mid -1;
+            
+        }
+        
+        return false;
+
+    }
+
 int main()
 {
-	int n=7;
-	int ans=0;
-	int i=0;
-	while (n)
-	{
-		if (n%2)
-			ans+=(pow(10,i)*1);
-		else 
-			ans+=0;
-		n=n>>1;
-		i++;
-	}
+    vector<vector<int>> v ={{1,1}};
 
-	cout << ans << endl;
-	return 0;
+    searchMatrix(v, 2);
+    return 0;
 }

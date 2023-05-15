@@ -13,6 +13,7 @@ public:
 	Graph (): isInitialized{false} {}
 
 	void addNode(int, int);
+	void remove(int, int);
 	void printNode();
 	void bfs();
 	void dfs();
@@ -46,6 +47,33 @@ void Graph::printNode()
 	}
 }
 
+void Graph::remove(int s, int d)
+{
+	auto it =find(adjList[s].begin(),adjList[s].end(), d);
+	if (it==adjList[s].end())
+	{
+		cout << "Element Not Present.";
+		return;
+	}
+
+	for (int i=0; i<adjList[s].size();i++)
+	{
+		if (adjList[s][i]==d)
+			swap(adjList[s][i], adjList[s][adjList[s].size()-1]),
+			adjList[s].pop_back();
+	}
+
+
+	for (int i=0; i<adjList[d].size();i++)
+	{
+		if (adjList[d][i]==s)
+			swap(adjList[d][i], adjList[d][adjList[d].size()-1]),
+			adjList[d].pop_back();
+	}
+
+	cout << "Edge Removed Succesfully!.\n";
+}
+
 void Graph::bfs()
 {
 	if (!isInitialized)
@@ -70,18 +98,56 @@ void Graph::bfs()
 	while(!q.empty())
 	{
 		int temp =q.front();
-		if (!visitedNodes[temp])
-			cout << temp << " ";
 		visitedNodes[temp] =true;
 		for (int i=0; i<adjList[temp].size(); i++)
 		{
 			if (visitedNodes[adjList[temp][i]]==true)
 				continue;
+			visitedNodes[adjList[temp][i]] =true;
 			q.push(adjList[temp][i]);
 		}
 		q.pop();
+		cout << temp << " ";
 	}
 	cout << endl;
+}
+
+void Graph::dfs()
+{
+	if (!isInitialized)
+	{
+		cout << "Graph is empty.\n";
+		return;
+	}
+
+	stack<int> st;
+	int vertex1 =0;
+	for (int i=0; i<GRAPH_SIZE; i++)
+	{
+		if (adjList[i].empty())
+			continue;
+		vertex1 =i;
+		break;
+	}
+
+	bool visitedNodes[GRAPH_SIZE] ={false};
+	st.push(vertex1);
+
+	while(!st.empty())
+	{
+		int temp =st.top();
+		st.pop();
+		visitedNodes[temp] =true;
+		for (int i=0; i<adjList[temp].size(); i++)
+		{
+			if (visitedNodes[adjList[temp][i]]==true)
+				continue;
+			visitedNodes[adjList[temp][i]] =true;
+			st.push(adjList[temp][i]);
+		}
+		cout << temp << " ";
+	}
+	cout << endl;	
 }
 
 int main()
@@ -98,5 +164,10 @@ int main()
 
 	graph.printNode();
 	graph.bfs();
+	graph.dfs();
+
+	graph.remove(1,2);
+	graph.printNode();
+
 	return 0;
 }
