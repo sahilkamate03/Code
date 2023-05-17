@@ -21,6 +21,12 @@ public:
 
 void Graph::addNode(int u, int v)
 {
+	if (u>=GRAPH_SIZE || v>=GRAPH_SIZE)
+	{
+		cout << "Enter element less than "<< GRAPH_SIZE << endl;
+		return;
+	}
+
 	if (!isInitialized)
 		isInitialized =!isInitialized;
 
@@ -52,7 +58,7 @@ void Graph::remove(int s, int d)
 	auto it =find(adjList[s].begin(),adjList[s].end(), d);
 	if (it==adjList[s].end())
 	{
-		cout << "Element Not Present.";
+		cout << "Edge Not Present.\n";
 		return;
 	}
 
@@ -154,7 +160,7 @@ int main()
 {
 	Graph graph;
 
-	graph.addNode(1,2);
+	graph.addNode(100,2);
 	graph.addNode(1,3);
 	graph.addNode(2,4);
 	graph.addNode(2,5);
@@ -167,6 +173,8 @@ int main()
 	graph.dfs();
 
 	graph.remove(1,2);
+	graph.remove(1,2);
+
 	graph.printNode();
 
 	return 0;
