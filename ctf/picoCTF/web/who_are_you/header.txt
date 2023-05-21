@@ -1,0 +1,2 @@
+User-Agent: PicoBrowser
+Referer: http://mercury.picoctf.net:46199/

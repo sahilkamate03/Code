@@ -35,8 +35,6 @@ int DSU::findNumber(int value)
 	while (parent[value] != -1)
 	{
 		parent[value] = parent[parent[value]];
-		// rank[parent[x]]--;
-		// x =parent[x];
 	}
 	return value;
 }
@@ -78,14 +76,9 @@ void Graph::addNode(int w, int x, int y)
 
 void Graph::kruskalAlgo()
 {
-	// for (int i = 0; i < edgeList.size(); i++)
-	// 	cout << edgeList[i][0] << " " << edgeList[i][1] << " " << edgeList[i][2] << endl;
-
-	// cout << endl;
 	sort(edgeList.begin(), edgeList.end());
 	DSU dsu(V);
-	// for (int i = 0; i < edgeList.size(); i++)
-	// 	cout << edgeList[i][0] << " " << edgeList[i][1] << " " << edgeList[i][2] << endl;
+	
 	int mstCost = 0;
 	for (int i = 0; i < edgeList.size() - 1; i++)
 	{
