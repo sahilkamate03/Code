@@ -146,17 +146,4 @@ int main()
     Topology tp;
     while(true)
         menu(tp);
-
-    // tp.insert(1,2);
-    // tp.insert(2,6);
-    // tp.insert(3,2);
-    // tp.insert(3,4);
-    // tp.insert(3,5);
-    // tp.insert(4,6);
-    // tp.insert(5,6);
-    
-    // cout << endl; 
-    // //tp.printMatrix();    
-
-    // tp.printTopo();
 }

@@ -89,6 +89,7 @@ void Graph::kruskalAlgo()
 			continue;
 
 		dsu.unionSet(x, y);
+		cout << x << " -> " << y << "\t" << edgeList[i][0] << "\n";
 		mstCost += edgeList[i][0];
 	}
 

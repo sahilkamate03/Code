@@ -3,7 +3,6 @@ using namespace std;
 #define SIZE 50
 
 int arr[SIZE];
-int rank[SIZE] = {0};
 
 void inititalize()
 {
@@ -16,7 +15,6 @@ int findNumber(int x)
 	while (arr[x] != x)
 	{
 		arr[x] = arr[arr[x]];
-		rank[arr[x]]--;
 		x = arr[x];
 	}
 	return x;
@@ -30,11 +28,7 @@ void unionSet(int a, int b)
 	if (x == y)
 		return;
 
-	if (rank[x] > rank[y])
-		arr[y] = x,
-		rank[x]++;
-	else
-		arr[x] = y;
+	arr[x] = y;
 
 }
 
