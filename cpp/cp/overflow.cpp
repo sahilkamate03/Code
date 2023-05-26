@@ -3,12 +3,12 @@ using namespace std;
 
 int main()
 {
-	int a=INT_MAX;
+	int a = INT_MAX;
 	cout << a << endl;
-	cout << a +1<< endl;
+	cout << a + 1 << endl;
 
-	string s ="Hello";
-	s[0] ='e';
+	string s = "Hello";
+	s[0] = 'e';
 	cout << s << endl;
 	return 0;
 }
