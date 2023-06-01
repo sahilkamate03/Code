@@ -39,7 +39,7 @@ void menuBST(BinarySearchTree& bt)
 			bt.postOrderTraversal();
 			break;
 		case 5:
-			bt.height(bt.getRoot());
+			cout << bt.height(bt.getRoot()) << endl;
 			break;
 		case 6:
 			cloneBinaryTreeNode =cloneBinaryTree(bt.getRoot());
@@ -105,7 +105,7 @@ void menuBT(BinaryTree& bt)
 			bt.postOrderTraversal();	
 			break;
 		case 5:
-			bt.height(bt.getRoot());
+			cout << "Height: " << bt.height(bt.getRoot()) << endl;
 			break;
 		case 6:
 			cloneBinaryTreeNode =cloneBinaryTree(bt.getRoot());
