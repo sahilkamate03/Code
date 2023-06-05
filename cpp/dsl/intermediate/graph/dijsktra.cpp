@@ -18,15 +18,30 @@ int minSet(int key[], int visitedNodes[])
 	return minIndex;
 }
 
+void printPath(int parent[], int i)
+{
+	if (parent[i]==-1)
+	{
+		
+		return;
+	}
+
+	printPath(parent, parent[i]);
+	cout << parent[i] << " -> ";
+
+}
+
 void dijsktraAlgo(int graph[][V])
 {
 	int key[V];
 	int visitedNodes[V];
+	int parent[V];
 
 	for (int i=0; i<V; i++)
 		key[i] =INT_MAX, visitedNodes[i] =false;
 
 	key[0] =0;
+	parent[0] =-1;
 
 	for (int v =0; v <V; v++)
 	{
@@ -38,13 +53,17 @@ void dijsktraAlgo(int graph[][V])
 			if (!visitedNodes[i] && graph[u][i] && key[u] != INT_MAX && key[u] +graph[u][i] < key[i])
 			{
 				key[i] =key[u] +graph[u][i];
+				parent[i] =u;
 			} 
 		}
 	}
 
 	for (int i=0; i<V; i++)
 	{
-		cout << i << " -> " << key[i] << endl;
+		cout << i << " : " << key[i] << endl;
+		cout << "Path: ";
+		printPath(parent, i);
+		cout << i << endl;
 	}
 
 	return;
