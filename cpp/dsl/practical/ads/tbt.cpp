@@ -37,6 +37,7 @@ public:
 	}
 
 	void insert(int);
+	void conversion();
 };
 
 void TBT::insert(int key)
@@ -98,6 +99,56 @@ void inorder(Node* node)
 	}
 }
 
+vector<Node*> inorderVector;
+void inorderMaker(Node* node)
+{
+	if (!node)
+		return;
+	inorder(node->left);
+	inorderVector.push_back(node);
+	inorder(node->right);
+}
+
+void TBT::conversion()
+{
+	if (!inorderVector.size())
+	{
+		cout << "BST not initialized." << endl;
+		return;
+	}
+	for (int i = 2; i < inorderVector.size() - 1; i++)
+	{
+		Node *currentNode = inorderVector[i];
+		if (currentNode->left)
+			currentNode->lflag = 0;
+		else
+			currentNode->left = inorderVector[i - 1];
+
+		if (currentNode->right)
+			currentNode->rflag = 0;
+		else
+			currentNode->right = inorderVector[i + 1];
+	}
+
+	inorderVector[0]->left = dummyNode;
+	inorderVector[inorderVector.size() - 1]->right = dummyNode;
+
+	if (inorderVector.size() > 1)
+	{
+		if (inorderVector[0]->right)
+			inorderVector[0]->rflag = 0;
+		else
+			inorderVector[0]->right = inorderVector[1];
+
+		if (inorderVector[inorderVector.size() - 1]->left)
+			inorderVector[inorderVector.size() - 1]->lflag = 0;
+		else
+			inorderVector[inorderVector.size() - 1]->left = inorderVector[inorderVector.size() - 2];
+	}
+
+	cout << "BST converted to TBT.\n";
+}
+
 int main()
 {
 	TBT tbt;
@@ -110,6 +161,9 @@ int main()
 	tbt.insert(30);
 	tbt.insert(7);
 	
+	inorderMaker(tbt.root);
+	tbt.conversion();
 	inorder(tbt.root);
+
 	cout << endl;
 }

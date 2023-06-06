@@ -22,7 +22,6 @@ void printPath(int parent[], int i)
 {
 	if (parent[i]==-1)
 	{
-		
 		return;
 	}
 
