@@ -1,0 +1,8 @@
+The squares represent terminal nodes. These terminal nodes represent 
+unsuccessful searches of the tree for key values. The searches did not end 
+successfully, that is, because they represent key values that are not actually 
+stored in the tree the round nodes represent internal nodes; these are the actual keys stored in 
+the tree. Assuming that the relative frequency with which each key value is accessed 
+is known, weights can be assigned to each node of the extended tree (p1 … 
+p6). They represent the relative frequencies of searches terminating at each 
+node, that is, they mark the successful searches.
