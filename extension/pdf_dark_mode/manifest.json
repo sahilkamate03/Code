@@ -1,27 +1,19 @@
 {
-  "description": "Dark Mode for PDF",
   "manifest_version": 2,
-  "name": "Dark PDF",
+  "name": "PDF Color Changer",
   "version": "1.0",
-  "homepage_url": "https://example.com/your-extension-homepage",
+  "description": "Change the color of PDFs in Firefox",
   "icons": {
-    "48": "icons/icon.png"
+    "48": "icon.png"
   },
-  "permissions": [
-    "activeTab",
-    "scripting",
-    "theme",
-    "<all_urls>"
-  ],
-  "content_scripts": [
-  {
-    "matches": [
-      "*://*/*.pdf",        
-      "*://*/*/*.pdf",  
-      "*://*/*.pdf?*",     
-      "*://*/*/*.pdf?*"    
-  ],
-    "js": ["pdf.js"]
-  }
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab"],
+  "content_scripts" : [
+      {
+          "matches" : ["*://*/*.pdf"],
+          "js" : ["pdf.js"]
+      }
   ]
 }

@@ -1,0 +1,17 @@
+{
+    "name": "Practice",
+    "version": "1.0",
+    "description": "Learn To Make Extesnion.",
+    "permissions": [
+        "activeTab"
+    ],
+    "browser_action": {
+        "default_popup": "popip.html",
+        "default_icon": {
+            "16": "img/icon16.png",
+            "32": "img/icon32.png",
+            "48": "img/icon48.png"
+        }
+    },
+    "manifest_version": 2
+}
