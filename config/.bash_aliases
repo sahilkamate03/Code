@@ -1,4 +1,4 @@
-alias cpwd='pwd | xclip -selection clipboard'
+alias clip='xclip -selection clipboard'
 alias CODE_BACKUP='/home/sahilkamate03/code/shell/code_backup.sh'
 
 alias AndroidStudio='cd ~/software/android-studio/bin; ./studio.sh'
@@ -9,3 +9,6 @@ alias rm="echo Use 'del', not 'rm' n00b."
 alias del="trash-put"
 
 alias vim="gvim"
+
+alias ls="exa"
+alias cat="bat"
