@@ -1,0 +1,39 @@
+<snippet>
+	<content><![CDATA[
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	#endif
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>CP</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>
+
+<snippet>
+	<content><![CDATA[
+#ifndef NAME_H
+#define NAME_H
+
+class Name: 
+{
+public:
+	Name();
+	~Name();
+protected:
+private:
+};
+
+#endif
+
+]]></content>
+	<tabTrigger>class_header</tabTrigger>
+	<scope>source.c++</scope>
+</snippet>
